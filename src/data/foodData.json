@@ -56,12 +56,12 @@
   },
   {
     "id": "f12",
-    "food": "Avocado, aus �bersee  ",
+    "food": "Avocado, aus Übersee  ",
     "co2": 0.8
   },
   {
     "id": "f13",
-    "food": "Avocado (Bio), aus �bersee  ",
+    "food": "Avocado (Bio), aus Übersee  ",
     "co2": 0.8
   },
   {
@@ -111,7 +111,7 @@
   },
   {
     "id": "v23",
-    "food": "Erbsen, frisch gr�n in Schoten",
+    "food": "Erbsen, frisch grün in Schoten",
     "co2": 0.4
   },
   {
@@ -146,17 +146,17 @@
   },
   {
     "id": "f30",
-    "food": "Erdbeeren, frisch aus Spanien ",
+    "food": "Erdbeeren, frisch aus Spanien",
     "co2": 0.4
   },
   {
     "id": "f31",
-    "food": "Erdbeeren, gefroren  ",
+    "food": "Erdbeeren, gefroren",
     "co2": 0.7
   },
   {
     "id": "f32",
-    "food": "Erdbeeren, frisch (Winter-Erdbeeren) ",
+    "food": "Erdbeeren, frisch (Winter-Erdbeeren)",
     "co2": 3.4
   },
   {
@@ -171,37 +171,37 @@
   },
   {
     "id": "v35",
-    "food": "Grünkohl, frisch  ",
+    "food": "Grünkohl, frisch",
     "co2": 0.3
   },
   {
     "id": "v36",
-    "food": "Grünkohl, Glas  ",
+    "food": "Grünkohl, Glas",
     "co2": 0.9
   },
   {
     "id": "v37",
-    "food": "Karotten,   ",
+    "food": "Karotten",
     "co2": 0.1
   },
   {
     "id": "v38",
-    "food": "Kartoffeln, frisch  ",
+    "food": "Kartoffeln, frisch",
     "co2": 0.2
   },
   {
     "id": "v39",
-    "food": "Kartoffeln (Bio),   ",
+    "food": "Kartoffeln (Bio)",
     "co2": 0.2
   },
   {
     "id": "v40",
-    "food": "Kartoffelpüreepulver,   ",
+    "food": "Kartoffelpüreepulver",
     "co2": 0.9
   },
   {
     "id": "v41",
-    "food": "Kichererbsen, Dose  ",
+    "food": "Kichererbsen, Dose",
     "co2": 1.3
   },
   {
@@ -226,22 +226,22 @@
   },
   {
     "id": "v46",
-    "food": "Linsen, getrocknet  ",
+    "food": "Linsen, getrocknet",
     "co2": 1.2
   },
   {
     "id": "v47",
-    "food": "Linsen (Bio), getrocknet  ",
+    "food": "Linsen (Bio), getrocknet",
     "co2": 1.7
   },
   {
     "id": "v48",
-    "food": "Linsen, Dose  ",
+    "food": "Linsen, Dose",
     "co2": 1.7
   },
   {
     "id": "v49",
-    "food": "Mais, Dose  ",
+    "food": "Mais, Dose",
     "co2": 1.2
   },
   {
@@ -256,12 +256,12 @@
   },
   {
     "id": "f52",
-    "food": "Pfirsich, frisch  ",
+    "food": "Pfirsich, frisch",
     "co2": 0.2
   },
   {
     "id": "f53",
-    "food": "Pfirsich, Dose  ",
+    "food": "Pfirsich, Dose",
     "co2": 1.6
   },
   {
@@ -271,32 +271,32 @@
   },
   {
     "id": "v55",
-    "food": "Rosenkohl, frisch  ",
+    "food": "Rosenkohl, frisch",
     "co2": 0.3
   },
   {
     "id": "v56",
-    "food": "Rosenkohl, gefroren  ",
+    "food": "Rosenkohl, gefroren",
     "co2": 0.6
   },
   {
     "id": "v57",
-    "food": "Rote Beete, frisch  ",
+    "food": "Rote Beete, frisch",
     "co2": 0.2
   },
   {
     "id": "v58",
-    "food": "Rote Beete, Glas  ",
+    "food": "Rote Beete, Glas",
     "co2": 1.3
   },
   {
     "id": "v59",
-    "food": "Rotkohl, frisch  ",
+    "food": "Rotkohl, frisch",
     "co2": 0.2
   },
   {
     "id": "v60",
-    "food": "Rotkohl, Glas  ",
+    "food": "Rotkohl, Glas",
     "co2": 0.7
   },
   {
@@ -306,27 +306,27 @@
   },
   {
     "id": "v62",
-    "food": "Salatgurke mit Plastikfolienverpackung,   ",
+    "food": "Salatgurke mit Plastikfolienverpackung",
     "co2": 0.4
   },
   {
     "id": "v63",
-    "food": "Salatgurke, ohne Plastikverpackung  ",
+    "food": "Salatgurke, ohne Plastikverpackung",
     "co2": 0.4
   },
   {
     "id": "v64",
-    "food": "Salatgurke (Bio), mit Plastikverpackung  ",
+    "food": "Salatgurke (Bio), mit Plastikverpackung",
     "co2": 0.4
   },
   {
     "id": "v65",
-    "food": "Salatgurke (Bio), ohne Plastikverpackung  ",
+    "food": "Salatgurke (Bio), ohne Plastikverpackung",
     "co2": 0.4
   },
   {
     "id": "v66",
-    "food": "Salatmischung, gewaschen  ",
+    "food": "Salatmischung, gewaschen",
     "co2": 0.4
   },
   {
@@ -341,67 +341,67 @@
   },
   {
     "id": "v69",
-    "food": "Spinat, frisch  ",
+    "food": "Spinat, frisch",
     "co2": 0.2
   },
   {
     "id": "v70",
-    "food": "Spinat, Blattspinat gefroren ",
+    "food": "Spinat, Blattspinat gefroren",
     "co2": 0.6
   },
   {
     "id": "v71",
-    "food": "Tomaten, frisch Durchschnitt ",
+    "food": "Tomaten, frisch Durchschnitt",
     "co2": 0.8
   },
   {
     "id": "v72",
-    "food": "Tomaten, aus Deutschland saisonal ",
+    "food": "Tomaten, aus Deutschland saisonal",
     "co2": 0.3
   },
   {
     "id": "v73",
-    "food": "Tomaten, aus S�deuropa Freiland ",
+    "food": "Tomaten, aus Südeuropa Freiland",
     "co2": 0.4
   },
   {
     "id": "v74",
-    "food": "Tomaten (Bio), frisch  ",
+    "food": "Tomaten (Bio), frisch",
     "co2": 1.1
   },
   {
     "id": "v75",
-    "food": "Tomaten, Kirschtomaten  ",
+    "food": "Tomaten, Kirschtomaten",
     "co2": 0.9
   },
   {
     "id": "v76",
-    "food": "Tomaten, aus Deutschland beheiztes Gew�chshaus �Winter-Tomate�",
+    "food": "Tomaten, aus Deutschland, beheiztes Gewächshaus (Winter-Tomate)",
     "co2": 2.9
   },
   {
     "id": "v77",
-    "food": "Tomaten, passiert Verbundkarton ",
+    "food": "Tomaten, passiert Verbundkarton",
     "co2": 1.6
   },
   {
     "id": "v78",
-    "food": "Tomaten, passiert Dose ",
+    "food": "Tomaten, passiert Dose",
     "co2": 1.8
   },
   {
     "id": "v79",
-    "food": "Tomaten, passiert Glas ",
+    "food": "Tomaten, passiert Glas",
     "co2": 1.9
   },
   {
     "id": "v80",
-    "food": "Tomatenmark,   ",
+    "food": "Tomatenmark",
     "co2": 4.3
   },
   {
     "id": "f81",
-    "food": "Trauben, frisch Durchschnitt ",
+    "food": "Trauben, frisch Durchschnitt",
     "co2": 0.4
   },
   {
@@ -416,7 +416,7 @@
   },
   {
     "id": "v84",
-    "food": "Wei�kohl",
+    "food": "Weißkohl",
     "co2": 0.1
   },
   {
@@ -446,127 +446,127 @@
   },
   {
     "id": "d4",
-    "food": "Joghurt, natur  ",
+    "food": "Joghurt, natur",
     "co2": 1.7
   },
   {
     "id": "d5",
-    "food": "Joghurt, Fr�chte  ",
+    "food": "Joghurt, Früchte",
     "co2": 1.7
   },
   {
     "id": "d6",
-    "food": "Joghurt (Bio), natur  ",
+    "food": "Joghurt (Bio), natur",
     "co2": 1.9
   },
   {
     "id": "d7",
-    "food": "Joghurt-Ersatz, Soja  ",
+    "food": "Joghurt-Ersatz, Soja",
     "co2": 0.6
   },
   {
     "id": "d8",
-    "food": "K�se, Durchschnitt  ",
+    "food": "Käse, Durchschnitt",
     "co2": 5.7
   },
   {
     "id": "d9",
-    "food": "K�se (Bio), Durchschnitt  ",
+    "food": "Käse (Bio)",
     "co2": 7.2
   },
   {
     "id": "d10",
-    "food": "K�se, Frischk�se  ",
+    "food": "Käse, Frischkäse",
     "co2": 5.5
   },
   {
     "id": "d11",
-    "food": "K�se (Bio), Frischk�se  ",
+    "food": "Käse (Bio), Frischkäse",
     "co2": 6.9
   },
   {
     "id": "d12",
-    "food": "K�se, Feta  ",
+    "food": "Käse, Feta",
     "co2": 7
   },
   {
     "id": "d13",
-    "food": "K�se, Hartk�se wie Emmentaler ",
+    "food": "Käse, Hartkäse wie Emmentaler",
     "co2": 6
   },
   {
     "id": "d14",
-    "food": "K�se, Hartk�se wie Parmesan ",
+    "food": "Käse, Hartkäse wie Parmesan",
     "co2": 6.3
   },
   {
     "id": "d15",
-    "food": "K�se-Ersatz, vegane Genie�erscheiben auf Basis von Kokosfett ",
+    "food": "Käse-Ersatz, vegane Genießerscheiben auf Basis von Kokosfett",
     "co2": 2
   },
   {
     "id": "d16",
-    "food": "Milch,  Vollmilch ",
+    "food": "Milch, Vollmilch",
     "co2": 1.4
   },
   {
     "id": "d17",
-    "food": "Milch,  fettarm ",
+    "food": "Milch, fettarm",
     "co2": 1.2
   },
   {
     "id": "d18",
-    "food": "Milch, H-Milch Vollmilch ",
+    "food": "Milch, H-Milch Vollmilch",
     "co2": 1.3
   },
   {
     "id": "d19",
-    "food": "Milch, H-Milch fettarm ",
+    "food": "Milch, H-Milch fettarm",
     "co2": 1.1
   },
   {
     "id": "d20",
-    "food": "Milch (Bio),  Vollmilch ",
+    "food": "Milch (Bio), Vollmilch",
     "co2": 1.7
   },
   {
     "id": "d21",
-    "food": "Milch-Ersatz, Dinkeldrink  ",
+    "food": "Milch-Ersatz, Dinkeldrink",
     "co2": 0.3
   },
   {
     "id": "d22",
-    "food": "Milch-Ersatz, Haferdrink  ",
+    "food": "Milch-Ersatz, Haferdrink",
     "co2": 0.3
   },
   {
     "id": "d23",
-    "food": "Milch-Ersatz, Mandeldrink  ",
+    "food": "Milch-Ersatz, Mandeldrink",
     "co2": 0.3
   },
   {
     "id": "d24",
-    "food": "Milch-Ersatz, Sojadrink  ",
+    "food": "Milch-Ersatz, Sojadrink",
     "co2": 0.4
   },
   {
     "id": "d25",
-    "food": "Quark, 40% Fett  ",
+    "food": "Quark, 40% Fett",
     "co2": 3.3
   },
   {
     "id": "d26",
-    "food": "Quark (Bio), 40% Fett  ",
+    "food": "Quark (Bio), 40% Fett",
     "co2": 4.1
   },
   {
     "id": "d27",
-    "food": "Quark, Magerquark 10% Fett ",
+    "food": "Quark, Magerquark 10% Fett",
     "co2": 2.4
   },
   {
     "id": "d28",
-    "food": "Quark-Ersatz, Soja  ",
+    "food": "Quark-Ersatz, Soja",
     "co2": 0.7
   },
   {
@@ -581,7 +581,7 @@
   },
   {
     "id": "d31",
-    "food": "Sahne-Ersatz, Hafer Cuisine  ",
+    "food": "Sahne-Ersatz, Hafer Cuisine",
     "co2": 0.6
   },
   {
@@ -606,47 +606,47 @@
   },
   {
     "id": "fi4",
-    "food": "Fisch, Wildfang Spezialit�t gefroren",
+    "food": "Fisch, Wildfang Spezialität gefroren",
     "co2": 10
   },
   {
     "id": "fi5",
-    "food": "Fisch, Aquakultur  ",
+    "food": "Fisch, Aquakultur",
     "co2": 5.1
   },
   {
     "id": "fi6",
-    "food": "Fisch, Garnelen gefroren ",
+    "food": "Fisch, Garnelen gefroren",
     "co2": 12.5
   },
   {
     "id": "fi7",
-    "food": "Fisch, Wildfang frisch ",
+    "food": "Fisch, Wildfang frisch",
     "co2": 4
   },
   {
     "id": "vm8",
-    "food": "Gem�senugget /-schnitzel",
+    "food": "Gemüsenugget /-schnitzel",
     "co2": 1.3
   },
   {
     "id": "m9",
-    "food": "H�hnchen, Durchschnitt  ",
+    "food": "Hühnchen, Durchschnitt",
     "co2": 5.5
   },
   {
     "id": "m10",
-    "food": "H�hnchen, gefroren  ",
+    "food": "Hühnchen, gefroren",
     "co2": 5.7
   },
   {
     "id": "m11",
-    "food": "H�hnchen, Nuggets  ",
+    "food": "Hühnchen, Nuggets",
     "co2": 3.3
   },
   {
     "id": "m12",
-    "food": "H�hnchen, Wurstaufschnitt  ",
+    "food": "Hühnchen, Wurstaufschnitt",
     "co2": 2.9
   },
   {
@@ -676,7 +676,7 @@
   },
   {
     "id": "m18",
-    "food": "Rinder-Patty/-Bratling, tiefgek�hlt  ",
+    "food": "Rinder-Patty/-Bratling, tiefgekühlt",
     "co2": 9
   },
   {
@@ -691,7 +691,7 @@
   },
   {
     "id": "m21",
-    "food": "Schweinefleisch, gefroren  ",
+    "food": "Schweinefleisch, gefroren",
     "co2": 4.6
   },
   {
@@ -716,37 +716,37 @@
   },
   {
     "id": "m26",
-    "food": "Wildfleisch, Hirsch  ",
+    "food": "Wildfleisch, Hirsch",
     "co2": 11.5
   },
   {
     "id": "m27",
-    "food": "Wurst, Bratwurst Th�ringer Rostbratwurst ",
+    "food": "Bratwurst, Thüringer Rostbratwurst",
     "co2": 2.9
   },
   {
     "id": "m28",
-    "food": "Wurst-Ersatz, vegane Bratwurst  ",
+    "food": "Wurst-Ersatz, vegane Bratwurst",
     "co2": 1.7
   },
   {
     "id": "m29",
-    "food": "Wurstaufschnitt vom Rind, Aufschnitt  ",
+    "food": "Wurstaufschnitt vom Rind, Aufschnitt",
     "co2": 7.9
   },
   {
     "id": "w1",
-    "food": "Brot, Mischbrot  ",
+    "food": "Brot, Mischbrot",
     "co2": 0.6
   },
   {
     "id": "w2",
-    "food": "Brot (Bio), Mischbrot  ",
+    "food": "Brot (Bio), Mischbrot",
     "co2": 0.6
   },
   {
     "id": "w3",
-    "food": "Br�tchen, Wei�brot  ",
+    "food": "Brötchen, Weißbrot",
     "co2": 0.7
   },
   {
@@ -756,12 +756,12 @@
   },
   {
     "id": "w5",
-    "food": "Dinkel, Reisersatz  ",
+    "food": "Dinkel, Reisersatz",
     "co2": 0.7
   },
   {
     "id": "n6",
-    "food": "Erdn�sse, ungesch�lt  ",
+    "food": "Erdnüsse, ungeschält",
     "co2": 0.8
   },
   {
@@ -791,22 +791,22 @@
   },
   {
     "id": "o12",
-    "food": "Kokos�l",
+    "food": "Kokosöl",
     "co2": 2.3
   },
   {
     "id": "o13",
-    "food": "Margarine, halbfett  ",
+    "food": "Margarine, halbfett",
     "co2": 1.7
   },
   {
     "id": "o14",
-    "food": "Margarine, vollfett  ",
+    "food": "Margarine, vollfett",
     "co2": 2.8
   },
   {
     "id": "o15",
-    "food": "Margarine (Bio), vollfett  ",
+    "food": "Margarine (Bio), vollfett",
     "co2": 2.5
   },
   {
@@ -821,7 +821,7 @@
   },
   {
     "id": "o18",
-    "food": "Oliven�l",
+    "food": "Olivenöl",
     "co2": 3.2
   },
   {
@@ -831,12 +831,12 @@
   },
   {
     "id": "v20",
-    "food": "Pommes, tiefgek�hlt  ",
+    "food": "Pommes, tiefgekühlt",
     "co2": 0.7
   },
   {
     "id": "o21",
-    "food": "Raps�l",
+    "food": "Rapsöl",
     "co2": 3.3
   },
   {
@@ -846,7 +846,7 @@
   },
   {
     "id": "s23",
-    "food": "Schokolade, Vollmilchschokolade 35% Kakaogehalt ",
+    "food": "Schokolade, Vollmilchschokolade 35% Kakaogehalt",
     "co2": 4.1
   },
   {
@@ -856,87 +856,87 @@
   },
   {
     "id": "o25",
-    "food": "Sonnenblumen�l,   ",
+    "food": "Sonnenblumenöl",
     "co2": 3.2
   },
   {
     "id": "n26",
-    "food": "Waln�sse, ungesch�lt  ",
+    "food": "Walnüsse, ungeschält",
     "co2": 0.9
   },
   {
     "id": "s27",
-    "food": "Zucker, R�benzucker  ",
+    "food": "Zucker, Rübenzucker",
     "co2": 0.7
   },
   {
     "id": "s28",
-    "food": "Zucker (Bio), R�benzucker  ",
+    "food": "Zucker (Bio), Rübenzucker",
     "co2": 0.5
   },
   {
     "id": "s29",
-    "food": "Zucker, Rohrzucker  ",
+    "food": "Zucker, Rohrzucker",
     "co2": 1
   },
   {
     "id": "s30",
-    "food": "Zucker (Bio), Rohrzucker  ",
+    "food": "Zucker (Bio), Rohrzucker",
     "co2": 0.9
   },
   {
     "id": "b1",
-    "food": "Bier, 0.5L-Glasmehrwegflasche  ",
+    "food": "Bier, 0.5L-Glasflasche",
     "co2": 0.9
   },
   {
     "id": "b2",
-    "food": "Bier, 0.5L-Wei�blechdose  ",
+    "food": "Bier, 0.5L-Dose",
     "co2": 1
   },
   {
     "id": "b3",
-    "food": "Kaffee, Pulver  ",
+    "food": "Kaffee, Pulver",
     "co2": 5.6
   },
   {
     "id": "b4",
-    "food": "Kakao, Pulver  ",
+    "food": "Kakao, Pulver",
     "co2": 5
   },
   {
     "id": "b5",
-    "food": "Limonade, Orangenlimonade 0.75L-Einwegplastikflasche ",
+    "food": "Limonade, Orangenlimonade 0.75L-Einwegplastikflasche",
     "co2": 0.4
   },
   {
     "id": "b6",
-    "food": "Wasser, Mineralwasser, 0.7L-Glasmehrwegflasche  ",
+    "food": "Wasser, Mineralwasser, 0.7L-Glasflasche",
     "co2": 0.2
   },
   {
     "id": "b7",
-    "food": "Saft, Orangensaft 1.0L-Verbundkarton ",
+    "food": "Saft, Orangensaft 1.0L-Verbundkarton",
     "co2": 0.7
   },
   {
     "id": "b8",
-    "food": "Saft, Apfelsaft 1.0L-Glasmehrwegflasche ",
+    "food": "Saft, Apfelsaft 1.0L-Glasflasche",
     "co2": 0.4
   },
   {
     "id": "b9",
-    "food": "Saft, Apfelsaft 1.0L-Verbundkarton ",
+    "food": "Saft, Apfelsaft 1.0L-Verbundkarton",
     "co2": 0.4
   },
   {
     "id": "b10",
-    "food": "Wasser, Leitungswasser  ",
+    "food": "Wasser, Leitungswasser",
     "co2": 0
   },
   {
     "id": "b11",
-    "food": "Wein, 0.75L-Glaseinwegflasche  ",
+    "food": "Wein, 0.75L-Glasflasche",
     "co2": 1
   }
 ]

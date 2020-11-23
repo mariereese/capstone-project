@@ -1,5 +1,11 @@
+import FoodList from './FoodList'
+
 function App() {
-  return <div className="App">hello</div>;
+  return (
+    <div>
+      <FoodList />
+    </div>
+  )
 }
 
-export default App;
+export default App
