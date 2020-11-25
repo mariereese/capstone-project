@@ -1,4 +1,4 @@
-import foodData from './data/foodData.json'
+import foodData from '../../data/foodData.json'
 import styled from 'styled-components/macro'
 
 export default function FoodList() {
