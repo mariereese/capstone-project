@@ -1,4 +1,4 @@
-import FoodList from './FoodList'
+import FoodList from './components/FoodList/FoodList'
 
 function App() {
   return (
