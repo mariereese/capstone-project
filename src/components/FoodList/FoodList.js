@@ -1,11 +1,23 @@
-import foodData from '../../data/foodData.json'
+//import foodData from '../../../public/foodData.json'
 import styled from 'styled-components/macro'
+import { useState, useEffect } from 'react'
+import getFood from '../../services/getFood'
 
 export default function FoodList() {
+  const [foodList, setFoodList] = useState([])
+
+  useEffect(() => {
+    getFood()
+      .then((data) => setFoodList(data))
+      .catch((error) => console.log(error))
+  }, [])
+
+  //function searchFood() {}
+
   return (
     <FoodListStyled>
-      {foodData.map((food) => (
-        <FoodListItem>{food.food}</FoodListItem>
+      {foodList.map((foodItem) => (
+        <FoodListItem>{foodItem.food}</FoodListItem>
       ))}
     </FoodListStyled>
   )
@@ -15,14 +27,10 @@ const FoodListStyled = styled.ul`
   margin: 0 20px;
   box-shadow: 0 0 10px #767670;
   border-radius: 21px;
-  width: auto;
-  max-width: 350px;
-  min-width: 270px;
+  width: 100%;
   height: 387px;
   background: white;
-  padding: 1px 2px;
   padding: 0;
-  overflow: auto;
   overflow-y: auto;
   overflow-y: scroll;
 `
