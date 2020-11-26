@@ -43,7 +43,7 @@ const FoodListStyled = styled.ul`
   box-shadow: 0 0 10px #767670;
   border-radius: 21px;
   width: 100%;
-  height: 387px;
+  max-height: 387px;
   background: white;
   padding: 0;
   overflow-y: auto;
