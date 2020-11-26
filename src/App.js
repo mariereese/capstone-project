@@ -1,11 +1,17 @@
 import FoodList from './components/FoodList/FoodList'
+import styled from 'styled-components/macro'
 
-function App() {
+export default function App() {
   return (
     <>
-      <FoodList />
+      <AddPurchase>
+        <FoodList />
+      </AddPurchase>
     </>
   )
 }
 
-export default App
+const AddPurchase = styled.div`
+  display: grid;
+  grid-template-columns: 380px;
+`
