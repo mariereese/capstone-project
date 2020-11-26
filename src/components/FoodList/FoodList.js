@@ -30,8 +30,8 @@ export default function FoodList() {
         />
       </form>
       <FoodListStyled>
-        {filteredFoodList.map((foodItem) => (
-          <FoodListItem>{foodItem.food}</FoodListItem>
+        {filteredFoodList.map(({ id, food }) => (
+          <FoodListItem key={id}>{food}</FoodListItem>
         ))}
       </FoodListStyled>
     </>
