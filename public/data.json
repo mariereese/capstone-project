@@ -1,47 +1,47 @@
 [
   {
     "id": "f1",
-    "food": "Ananas, frisch  ",
+    "food": "Ananas, frisch",
     "co2": 0.9
   },
   {
     "id": "f2",
-    "food": "Ananas, per Schiff  ",
+    "food": "Ananas, per Schiff",
     "co2": 0.6
   },
   {
     "id": "f3",
-    "food": "Ananas, per Flugzeug  ",
+    "food": "Ananas, per Flugzeug",
     "co2": 15.1
   },
   {
     "id": "f4",
-    "food": "Ananas, Dose  ",
+    "food": "Ananas, Dose",
     "co2": 1.8
   },
   {
     "id": "f5",
-    "food": "Apfel, Durchschnitt  ",
+    "food": "Apfel, Durchschnitt",
     "co2": 0.3
   },
   {
     "id": "f6",
-    "food": "Apfel, regional im Herbst  ",
+    "food": "Apfel, regional im Herbst",
     "co2": 0.3
   },
   {
     "id": "f7",
-    "food": "Apfel, regional im April  ",
+    "food": "Apfel, regional im April",
     "co2": 0.4
   },
   {
     "id": "f8",
-    "food": "Apfel (Bio), Durchschnitt  ",
+    "food": "Apfel (Bio), Durchschnitt",
     "co2": 0.2
   },
   {
     "id": "f9",
-    "food": "Apfel, aus Neuseeland  ",
+    "food": "Apfel, aus Neuseeland",
     "co2": 0.8
   },
   {
@@ -51,17 +51,17 @@
   },
   {
     "id": "f11",
-    "food": "Avocado, Durchschnitt  ",
+    "food": "Avocado, Durchschnitt",
     "co2": 0.6
   },
   {
     "id": "f12",
-    "food": "Avocado, aus Übersee  ",
+    "food": "Avocado, aus Übersee",
     "co2": 0.8
   },
   {
     "id": "f13",
-    "food": "Avocado (Bio), aus Übersee  ",
+    "food": "Avocado (Bio), aus Übersee",
     "co2": 0.8
   },
   {
@@ -101,12 +101,12 @@
   },
   {
     "id": "v21",
-    "food": "Champignons, frisch hell oder dunkel ",
+    "food": "Champignons, frisch hell oder dunkel",
     "co2": 1.3
   },
   {
     "id": "v22",
-    "food": "Champignons, Dose  ",
+    "food": "Champignons, Dose",
     "co2": 2.4
   },
   {
@@ -116,27 +116,27 @@
   },
   {
     "id": "v24",
-    "food": "Erbsen, getrocknet  ",
+    "food": "Erbsen, getrocknet",
     "co2": 2.3
   },
   {
     "id": "v25",
-    "food": "Erbsen, gefroren  ",
+    "food": "Erbsen, gefroren",
     "co2": 1.2
   },
   {
     "id": "v26",
-    "food": "Erbsen, grün Dose ",
+    "food": "Erbsen, grün Dose",
     "co2": 1.7
   },
   {
     "id": "v27",
-    "food": "Erbsen, grün Glas ",
+    "food": "Erbsen, grün Glas",
     "co2": 1.7
   },
   {
     "id": "f28",
-    "food": "Erdbeeren, frisch Durchschnitt ",
+    "food": "Erdbeeren, frisch Durchschnitt",
     "co2": 0.3
   },
   {

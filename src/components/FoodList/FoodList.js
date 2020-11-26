@@ -16,8 +16,8 @@ export default function FoodList() {
     setSearchInput(event.target.value)
   }
 
-  const filteredFoodList = foodList.filter((food) =>
-    food.food.toLowerCase().includes(searchInput.toLowerCase())
+  const filteredFoodList = foodList.filter((foodListItem) =>
+    foodListItem.food.toLowerCase().includes(searchInput.toLowerCase())
   )
 
   return (
@@ -40,7 +40,7 @@ export default function FoodList() {
 
 const FoodListStyled = styled.ul`
   margin: 0 20px;
-  box-shadow: 0 0 10px #767670;
+  box-shadow: 0 0 10px var(--light-grey);
   border-radius: 21px;
   width: 100%;
   max-height: 387px;
@@ -53,16 +53,15 @@ const FoodListStyled = styled.ul`
 const FoodListItem = styled.li`
   list-style-type: none;
   padding: 6px 10px;
-  font-family: 'Rubik', sans-serif;
   font-weight: 300;
   font-size: 1.25rem;
-  color: #3f3f3b;
+  color: var(--dark-grey);
 `
 
 const SearchBar = styled.input`
   display: block;
   margin: 10px 20px;
-  box-shadow: 0 0 10px #767670;
+  box-shadow: 0 0 10px var(--light-grey);
   border: none;
   border-radius: 21px;
   width: 100%;

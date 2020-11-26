@@ -12,4 +12,11 @@ export default createGlobalStyle`
     padding: 0;
     font-family: 'Rubik', sans-serif;
   }
+
+  :root {
+    --dark-grey: #3f3f3b;
+    --light-grey: #767670;
+    --green: #5d987b;
+    --orange: #e07a5f;
+  }
 `
