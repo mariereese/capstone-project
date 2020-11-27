@@ -1,11 +1,13 @@
 import styled from 'styled-components/macro'
 
-export default function FoodList({ foodList }) {
+export default function FoodList({ foodList, onAddItem }) {
   return (
     <>
       <FoodListStyled>
         {foodList.map(({ id, food }) => (
-          <FoodListItem key={id}>{food}</FoodListItem>
+          <FoodListItem onClick={onAddItem} key={id}>
+            {food}
+          </FoodListItem>
         ))}
       </FoodListStyled>
     </>
