@@ -1,36 +1,10 @@
 import styled from 'styled-components/macro'
-import { useState, useEffect } from 'react'
-import getFood from '../../services/getFood'
 
-export default function FoodList() {
-  const [foodList, setFoodList] = useState([])
-  const [searchInput, setSearchInput] = useState('')
-
-  useEffect(() => {
-    getFood()
-      .then((data) => setFoodList(data))
-      .catch((error) => console.log(error))
-  }, [])
-
-  function handleChange(event) {
-    setSearchInput(event.target.value)
-  }
-
-  const filteredFoodList = foodList.filter((foodListItem) =>
-    foodListItem.food.toLowerCase().includes(searchInput.toLowerCase())
-  )
-
+export default function FoodList({ foodList }) {
   return (
     <>
-      <form>
-        <SearchBar
-          type="text"
-          placeholder="suchen..."
-          onChange={handleChange}
-        />
-      </form>
       <FoodListStyled>
-        {filteredFoodList.map(({ id, food }) => (
+        {foodList.map(({ id, food }) => (
           <FoodListItem key={id}>{food}</FoodListItem>
         ))}
       </FoodListStyled>
@@ -39,7 +13,7 @@ export default function FoodList() {
 }
 
 const FoodListStyled = styled.ul`
-  margin: 0 20px;
+  margin: 0;
   box-shadow: 0 0 10px var(--light-grey);
   border-radius: 21px;
   width: 100%;
@@ -56,16 +30,4 @@ const FoodListItem = styled.li`
   font-weight: 300;
   font-size: 1.25rem;
   color: var(--dark-grey);
-`
-
-const SearchBar = styled.input`
-  display: block;
-  margin: 10px 20px;
-  box-shadow: 0 0 10px var(--light-grey);
-  border: none;
-  border-radius: 21px;
-  width: 100%;
-  height: 40px;
-  padding-left: 15px;
-  font-size: 1.125rem;
 `

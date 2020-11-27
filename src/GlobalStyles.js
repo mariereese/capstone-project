@@ -13,6 +13,12 @@ export default createGlobalStyle`
     font-family: 'Rubik', sans-serif;
   }
 
+  h2 {
+    font-weight: 300;
+    color: var(--dark-grey);
+    margin: 13px;
+  }
+
   :root {
     --dark-grey: #3f3f3b;
     --light-grey: #767670;

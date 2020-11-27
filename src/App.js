@@ -1,17 +1,5 @@
-import FoodList from './components/FoodList/FoodList'
-import styled from 'styled-components/macro'
+import AddPurchase from './components/AddPurchase/AddPurchase'
 
 export default function App() {
-  return (
-    <>
-      <AddPurchase>
-        <FoodList />
-      </AddPurchase>
-    </>
-  )
+  return <AddPurchase />
 }
-
-const AddPurchase = styled.div`
-  display: grid;
-  grid-template-columns: 380px;
-`
