@@ -18,12 +18,14 @@ const FoodListStyled = styled.ul`
   margin: 0;
   box-shadow: 0 0 10px var(--light-grey);
   border-radius: 21px;
-  width: 100%;
+  width: 287px;
   max-height: 387px;
   background: white;
   padding: 0;
   overflow-y: auto;
   overflow-y: scroll;
+  position: absolute;
+  top: 70px;
 `
 
 const FoodListItem = styled.li`

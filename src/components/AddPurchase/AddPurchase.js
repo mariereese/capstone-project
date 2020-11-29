@@ -8,6 +8,7 @@ export default function AddPurchase() {
   const [foodList, setFoodList] = useState([])
   const [searchInput, setSearchInput] = useState('')
   const [purchasedFood, setPurchasedFood] = useState([])
+  const [foodListModal, setFoodListModal] = useState(false)
 
   useEffect(() => {
     getFood()
@@ -19,6 +20,10 @@ export default function AddPurchase() {
     setSearchInput(event.target.value)
   }
 
+  function toggleFoodListModal() {
+    setFoodListModal(!foodListModal)
+  }
+
   const filteredFoodList = foodList.filter((foodListItem) =>
     foodListItem.food.toLowerCase().includes(searchInput.toLowerCase())
   )
@@ -28,16 +33,22 @@ export default function AddPurchase() {
       ...purchasedFood,
       foodList.filter((foodItem) => id === foodItem.id),
     ])
+    setFoodListModal(!foodListModal)
   }
 
   return (
     <WhiteBox>
       <WrapperStyled>
-        <SearchFood handleChange={handleChange} />
-        <FoodList
-          onAddItem={() => addPurchasedFood(foodList.id)}
-          foodList={filteredFoodList}
+        <SearchFood
+          handleChange={handleChange}
+          onSearchClick={toggleFoodListModal}
         />
+        {foodListModal && (
+          <FoodList
+            onAddItem={() => addPurchasedFood(foodList.id)}
+            foodList={filteredFoodList}
+          />
+        )}
         <PurchaseCard>
           <h2>Einkauf:</h2>
           <ul>
@@ -52,6 +63,7 @@ export default function AddPurchase() {
 }
 
 const WhiteBox = styled.div`
+  width: 100%;
   position: absolute;
   box-shadow: 0 0 10px var(--light-grey);
   border-top-left-radius: 21px;

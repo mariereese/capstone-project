@@ -1,9 +1,14 @@
 import styled from 'styled-components/macro'
 
-export default function SearchFood({ handleChange }) {
+export default function SearchFood({ handleChange, onSearchClick }) {
   return (
     <label>
-      <SearchBar type="text" placeholder="suchen..." onChange={handleChange} />
+      <SearchBar
+        type="text"
+        placeholder="suchen..."
+        onChange={handleChange}
+        onClick={onSearchClick}
+      />
     </label>
   )
 }
