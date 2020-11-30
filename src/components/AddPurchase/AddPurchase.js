@@ -3,12 +3,14 @@ import SearchFood from '../SearchFood/SearchFood'
 import styled from 'styled-components/macro'
 import { useState, useEffect } from 'react'
 import getFood from '../../services/getFood'
+import SumFootprint from '../SumFootprint/SumFootprint'
 
 export default function AddPurchase() {
   const [foodList, setFoodList] = useState([])
   const [searchInput, setSearchInput] = useState('')
   const [purchasedFood, setPurchasedFood] = useState([])
   const [foodListModal, setFoodListModal] = useState(false)
+  const [carbonFootprintSum, setCarbonFootprintSum] = useState(0)
 
   useEffect(() => {
     getFood()
@@ -29,18 +31,17 @@ export default function AddPurchase() {
   )
 
   function addPurchasedFood(id) {
-    console.log(purchasedFood)
-
-    setPurchasedFood([
-      ...purchasedFood,
-      foodList.find((foodItem) => foodItem.id === id),
-    ])
+    console.log(carbonFootprintSum)
+    const addedItem = foodList.find((foodItem) => foodItem.id === id)
+    setPurchasedFood([...purchasedFood, addedItem])
+    setCarbonFootprintSum(carbonFootprintSum + addedItem.co2)
     setFoodListModal(!foodListModal)
   }
 
   return (
     <WhiteBox>
       <WrapperStyled>
+        <SumFootprint sum={carbonFootprintSum} />
         <SearchFood
           handleChange={handleChange}
           onSearchClick={toggleFoodListModal}
@@ -51,8 +52,11 @@ export default function AddPurchase() {
         <PurchaseCard>
           <h2>Einkauf:</h2>
           <ul>
-            {purchasedFood?.map(({ food, id }) => (
-              <li key={id}>{food}</li>
+            {purchasedFood?.map(({ food, id, co2 }) => (
+              <PurchasedFood key={id}>
+                <p>{food}</p>
+                <p>1000g</p>
+              </PurchasedFood>
             ))}
           </ul>
         </PurchaseCard>
@@ -83,4 +87,23 @@ const PurchaseCard = styled.div`
   border-radius: 21px;
   width: 100%;
   height: 370px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+`
+
+const PurchasedFood = styled.li`
+  display: flex;
+  justify-content: space-between;
+  color: var(--light-grey);
+  list-style-type: none;
+  font-weight: 300;
+  margin: 0 13px 0.4em;
+
+  p {
+    margin: 0;
+    font-size: 1.25rem;
+  }
 `
