@@ -29,9 +29,11 @@ export default function AddPurchase() {
   )
 
   function addPurchasedFood(id) {
+    console.log(purchasedFood)
+
     setPurchasedFood([
       ...purchasedFood,
-      foodList.filter((foodItem) => id === foodItem.id),
+      foodList.find((foodItem) => foodItem.id === id),
     ])
     setFoodListModal(!foodListModal)
   }
@@ -44,15 +46,12 @@ export default function AddPurchase() {
           onSearchClick={toggleFoodListModal}
         />
         {foodListModal && (
-          <FoodList
-            onAddItem={() => addPurchasedFood(foodList.id)}
-            foodList={filteredFoodList}
-          />
+          <FoodList foodList={filteredFoodList} onAddItem={addPurchasedFood} />
         )}
         <PurchaseCard>
           <h2>Einkauf:</h2>
           <ul>
-            {purchasedFood.map(({ food, id }) => (
+            {purchasedFood?.map(({ food, id }) => (
               <li key={id}>{food}</li>
             ))}
           </ul>

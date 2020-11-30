@@ -5,7 +5,7 @@ export default function FoodList({ foodList, onAddItem }) {
     <>
       <FoodListStyled>
         {foodList.map(({ id, food }) => (
-          <FoodListItem onClick={onAddItem} key={id}>
+          <FoodListItem onClick={() => onAddItem(id)} key={id}>
             {food}
           </FoodListItem>
         ))}
