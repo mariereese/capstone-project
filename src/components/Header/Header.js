@@ -9,6 +9,7 @@ export default function AppHeader({ title }) {
 }
 
 const Header = styled.header`
+  background-color: var(--green);
   width: 100%;
   text-align: center;
 

@@ -1,3 +1,3 @@
 ```js
-<SearchFood />
+<SearchFood></SearchFood>
 ```

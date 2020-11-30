@@ -1,3 +1,3 @@
 ```js
-<FoodList></FoodList>
+<FoodList>{food}</FoodList>
 ```
