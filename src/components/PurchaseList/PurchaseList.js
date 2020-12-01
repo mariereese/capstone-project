@@ -1,12 +1,13 @@
 import styled from 'styled-components/macro'
 
-export default function PurchaseList({ purchasedFood }) {
+export default function PurchaseList({ purchasedFood, onDelete }) {
   return (
     <PurchaseCard>
       <h2>Einkauf:</h2>
       <ul>
         {purchasedFood.map(({ food, id }) => (
           <PurchasedFood key={id}>
+            <p onClick={() => onDelete(id)}>X</p>
             <p>{food}</p>
             <p>1000g</p>
           </PurchasedFood>

@@ -35,9 +35,15 @@ export default function AddPurchase() {
   function addPurchasedFood(id) {
     const addedItem = foodList.find((foodItem) => foodItem.id === id)
     setPurchasedFood([...purchasedFood, addedItem])
-    setCarbonFootprintSum(carbonFootprintSum + addedItem.co2)
+    setCarbonFootprintSum(carbonFootprintSum + +addedItem.co2.toFixed(1))
     setFoodListModal(!foodListModal)
-    setPointerPosition(carbonFootprintSum === 9 ? 10 : 80)
+    // setPointerPosition(carbonFootprintSum === 9 ? 10 : 80)
+  }
+
+  function deleteFood(id) {
+    const deletedItem = purchasedFood.find((foodItem) => foodItem.id === id)
+    setPurchasedFood(purchasedFood.filter((food) => id !== food.id))
+    setCarbonFootprintSum(carbonFootprintSum - deletedItem.co2)
   }
 
   return (
@@ -54,7 +60,10 @@ export default function AddPurchase() {
         {foodListModal && (
           <FoodList foodList={filteredFoodList} onAddItem={addPurchasedFood} />
         )}
-        <PurchaseList purchasedFood={purchasedFood}></PurchaseList>
+        <PurchaseList
+          purchasedFood={purchasedFood}
+          onDelete={deleteFood}
+        ></PurchaseList>
       </WrapperStyled>
     </WhiteBox>
   )
