@@ -12,6 +12,7 @@ export default function AddPurchase() {
   const [purchasedFood, setPurchasedFood] = useState([])
   const [foodListModal, setFoodListModal] = useState(false)
   const [carbonFootprintSum, setCarbonFootprintSum] = useState(0)
+  const [pointerPosition, setPointerPosition] = useState(0)
 
   useEffect(() => {
     getFood()
@@ -36,12 +37,16 @@ export default function AddPurchase() {
     setPurchasedFood([...purchasedFood, addedItem])
     setCarbonFootprintSum(carbonFootprintSum + addedItem.co2)
     setFoodListModal(!foodListModal)
+    setPointerPosition(carbonFootprintSum === 9 ? 10 : 80)
   }
 
   return (
     <WhiteBox>
       <WrapperStyled>
-        <SumFootprint sum={carbonFootprintSum} />
+        <SumFootprint
+          sum={carbonFootprintSum}
+          pointerPosition={pointerPosition}
+        />
         <SearchFood
           handleChange={handleChange}
           onSearchClick={toggleFoodListModal}

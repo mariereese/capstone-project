@@ -17,7 +17,7 @@ export default createGlobalStyle`
 
   h2 {
     font-weight: 300;
-    font-size: 1.625rem;
+    font-size: 1.5rem;
     color: var(--dark-grey);
     margin: 13px;
   }
