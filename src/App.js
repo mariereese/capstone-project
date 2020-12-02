@@ -1,5 +1,5 @@
 import Header from './components/Header/Header'
-import AddPurchase from './components/AddPurchase/AddPurchase'
+import AddPurchase from './pages/AddPurchase/AddPurchase'
 
 export default function App() {
   return (

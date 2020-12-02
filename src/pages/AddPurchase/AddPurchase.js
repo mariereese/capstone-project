@@ -1,10 +1,10 @@
-import FoodList from '../FoodList/FoodList'
-import SearchFood from '../SearchFood/SearchFood'
+import FoodList from '../../components/FoodList/FoodList'
+import SearchFood from '../../components/SearchFood/SearchFood'
 import styled from 'styled-components/macro'
 import { useState, useEffect } from 'react'
 import getFood from '../../services/getFood'
-import SumFootprint from '../SumFootprint/SumFootprint'
-import PurchaseList from '../PurchaseList/PurchaseList'
+import SumFootprint from '../../components/SumFootprint/SumFootprint'
+import PurchaseList from '../../components/PurchaseList/PurchaseList'
 
 export default function AddPurchase() {
   const [foodList, setFoodList] = useState([])
@@ -45,7 +45,7 @@ export default function AddPurchase() {
     setPointerPosition(
       carbonFootprintSum <= 2000 / 365
         ? Math.round((100 / (2000 / 365)) * carbonFootprintSum)
-        : 100
+        : 98
     )
   }, [carbonFootprintSum])
 
@@ -69,7 +69,12 @@ export default function AddPurchase() {
           onSearchClick={toggleFoodListModal}
         />
         {foodListModal && (
-          <FoodList foodList={filteredFoodList} onAddItem={addPurchasedFood} />
+          <FoodListModal>
+            <FoodList
+              foodList={filteredFoodList}
+              onAddItem={addPurchasedFood}
+            />
+          </FoodListModal>
         )}
         <PurchaseList
           purchasedFood={purchasedFood}
@@ -94,4 +99,8 @@ const WrapperStyled = styled.div`
   grid-template-columns: 1fr;
   margin: 20px;
   row-gap: 12px;
+`
+const FoodListModal = styled.div`
+  position: absolute;
+  top: 205px;
 `

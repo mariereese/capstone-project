@@ -24,8 +24,8 @@ const FoodListStyled = styled.ul`
   padding: 0;
   overflow-y: auto;
   overflow-y: scroll;
-  position: absolute;
-  top: 205px;
+  /* position: absolute;
+  top: 205px; */
 `
 
 const FoodListItem = styled.li`
