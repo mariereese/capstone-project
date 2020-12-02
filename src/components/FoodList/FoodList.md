@@ -1,3 +1,14 @@
 ```js
-<FoodList>{food}</FoodList>
+<FoodList
+  foodList={[
+    {
+      id: 'f1',
+      food: 'Ananas, frisch',
+    },
+    {
+      id: 'f4',
+      food: 'Ananas, Dose',
+    },
+  ]}
+/>
 ```

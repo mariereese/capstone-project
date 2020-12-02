@@ -35,15 +35,26 @@ export default function AddPurchase() {
   function addPurchasedFood(id) {
     const addedItem = foodList.find((foodItem) => foodItem.id === id)
     setPurchasedFood([...purchasedFood, addedItem])
-    setCarbonFootprintSum(carbonFootprintSum + +addedItem.co2.toFixed(1))
+    setCarbonFootprintSum(
+      (carbonFootprintSum * 100 + addedItem.co2 * 100) / 100
+    )
     setFoodListModal(!foodListModal)
-    // setPointerPosition(carbonFootprintSum === 9 ? 10 : 80)
   }
+
+  useEffect(() => {
+    setPointerPosition(
+      carbonFootprintSum <= 2000 / 365
+        ? Math.round((100 / (2000 / 365)) * carbonFootprintSum)
+        : 100
+    )
+  }, [carbonFootprintSum])
 
   function deleteFood(id) {
     const deletedItem = purchasedFood.find((foodItem) => foodItem.id === id)
     setPurchasedFood(purchasedFood.filter((food) => id !== food.id))
-    setCarbonFootprintSum(carbonFootprintSum - deletedItem.co2)
+    setCarbonFootprintSum(
+      (carbonFootprintSum * 100 - deletedItem.co2 * 100) / 100
+    )
   }
 
   return (

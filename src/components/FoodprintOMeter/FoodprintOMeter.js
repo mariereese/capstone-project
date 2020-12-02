@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 
-export default function FoodPrintOMeter({ pointerPosition }) {
+export default function FoodprintOMeter({ pointerPosition }) {
   return (
     <>
       <ColorBar>

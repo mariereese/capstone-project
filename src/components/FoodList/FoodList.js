@@ -25,7 +25,7 @@ const FoodListStyled = styled.ul`
   overflow-y: auto;
   overflow-y: scroll;
   position: absolute;
-  top: 190px;
+  top: 205px;
 `
 
 const FoodListItem = styled.li`

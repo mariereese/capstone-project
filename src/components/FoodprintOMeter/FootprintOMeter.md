@@ -1,0 +1,3 @@
+```js
+<FootprintOMeter></FootprintOMeter>
+```

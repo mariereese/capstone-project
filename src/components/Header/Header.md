@@ -1,3 +1,3 @@
 ```js
-<AppHeader>Einkauf hinzufügen</AppHeader>
+<AppHeader title="Einkauf hinzufügen"></AppHeader>
 ```
