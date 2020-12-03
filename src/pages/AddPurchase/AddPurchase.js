@@ -13,6 +13,7 @@ export default function AddPurchase() {
   const [foodListModal, setFoodListModal] = useState(false)
   const [carbonFootprintSum, setCarbonFootprintSum] = useState(0)
   const [pointerPosition, setPointerPosition] = useState(0)
+  //const [isDisabled, setIsDisabled] = useState(false)
 
   useEffect(() => {
     getFood()
@@ -39,6 +40,7 @@ export default function AddPurchase() {
       (carbonFootprintSum * 100 + addedItem.co2 * 100) / 100
     )
     setFoodListModal(!foodListModal)
+    //setIsDisabled(purchasedFood.includes(id) ? true : false)
   }
 
   useEffect(() => {
@@ -73,6 +75,7 @@ export default function AddPurchase() {
             <FoodList
               foodList={filteredFoodList}
               onAddItem={addPurchasedFood}
+              //disabled={isDisabled}
             />
           </FoodListModal>
         )}
