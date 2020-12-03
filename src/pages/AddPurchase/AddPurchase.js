@@ -5,13 +5,19 @@ import { useState, useEffect } from 'react'
 import getFood from '../../services/getFood'
 import SumFootprint from '../../components/SumFootprint/SumFootprint'
 import PurchaseList from '../../components/PurchaseList/PurchaseList'
+import loadLocally from '../../lib/loadLocally'
+import saveLocally from '../../lib/savelocally'
 
 export default function AddPurchase() {
   const [foodList, setFoodList] = useState([])
   const [searchInput, setSearchInput] = useState('')
-  const [purchasedFood, setPurchasedFood] = useState([])
+  const [purchasedFood, setPurchasedFood] = useState(
+    loadLocally('purchasedFood') ?? []
+  )
   const [foodListModal, setFoodListModal] = useState(false)
-  const [carbonFootprintSum, setCarbonFootprintSum] = useState(0)
+  const [carbonFootprintSum, setCarbonFootprintSum] = useState(
+    loadLocally('carbonFootprintSum') ?? 0
+  )
   const [pointerPosition, setPointerPosition] = useState(0)
   //const [isDisabled, setIsDisabled] = useState(false)
 
@@ -58,6 +64,14 @@ export default function AddPurchase() {
       (carbonFootprintSum * 100 - deletedItem.co2 * 100) / 100
     )
   }
+
+  useEffect(() => {
+    saveLocally('purchasedFood', purchasedFood)
+  }, [purchasedFood])
+
+  useEffect(() => {
+    saveLocally('carbonFootprintSum', carbonFootprintSum)
+  }, [carbonFootprintSum])
 
   return (
     <WhiteBox>
