@@ -19,7 +19,6 @@ export default function AddPurchase() {
     loadLocally('carbonFootprintSum') ?? 0
   )
   const [pointerPosition, setPointerPosition] = useState(0)
-  //const [isDisabled, setIsDisabled] = useState(false)
 
   useEffect(() => {
     getFood()
@@ -46,7 +45,6 @@ export default function AddPurchase() {
       (carbonFootprintSum * 100 + addedItem.co2 * 100) / 100
     )
     setFoodListModal(!foodListModal)
-    //setIsDisabled(purchasedFood.includes(id) ? true : false)
   }
 
   useEffect(() => {
@@ -57,9 +55,13 @@ export default function AddPurchase() {
     )
   }, [carbonFootprintSum])
 
-  function deleteFood(id) {
-    const deletedItem = purchasedFood.find((foodItem) => foodItem.id === id)
-    setPurchasedFood(purchasedFood.filter((food) => id !== food.id))
+  function deleteFood(index) {
+    const deletedItem = purchasedFood.find(
+      (_, itemPosition) => itemPosition === index
+    )
+    setPurchasedFood(
+      purchasedFood.filter((_, itemPosition) => itemPosition !== index)
+    )
     setCarbonFootprintSum(
       (carbonFootprintSum * 100 - deletedItem.co2 * 100) / 100
     )

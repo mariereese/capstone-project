@@ -5,9 +5,9 @@ export default function PurchaseList({ purchasedFood, onDelete }) {
     <PurchaseCard>
       <h2>Einkauf:</h2>
       <ul>
-        {purchasedFood.map(({ food, id }) => (
-          <PurchasedFood key={id}>
-            <p onClick={() => onDelete(id)}>X</p>
+        {purchasedFood.map(({ food, id }, index) => (
+          <PurchasedFood key={index}>
+            <p onClick={() => onDelete(index)}>X</p>
             <p>{food}</p>
             <p>1000g</p>
           </PurchasedFood>
