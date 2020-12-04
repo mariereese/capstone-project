@@ -38,13 +38,35 @@ export default function AddPurchase() {
     foodListItem.food.toLowerCase().includes(searchInput.toLowerCase())
   )
 
-  function addPurchasedFood(id) {
+  function handleAddFood(id) {
     const addedItem = foodList.find((foodItem) => foodItem.id === id)
     setPurchasedFood([...purchasedFood, addedItem])
     setCarbonFootprintSum(
-      (carbonFootprintSum * 100 + addedItem.co2 * 100) / 100
+      (roundNumber(carbonFootprintSum * 100) +
+        roundNumber(addedItem.co2 * 100)) /
+        100
     )
     setFoodListModal(!foodListModal)
+  }
+
+  function handleRemoveFood(index) {
+    const deletedItem = purchasedFood.find(
+      (_, itemPosition) => itemPosition === index
+    )
+    setPurchasedFood(
+      purchasedFood.filter((_, itemPosition) => itemPosition !== index)
+    )
+    setCarbonFootprintSum(
+      (roundNumber(carbonFootprintSum * 100) -
+        roundNumber(deletedItem.co2 * 100)) /
+        100
+    )
+  }
+
+  console.log(carbonFootprintSum)
+
+  function roundNumber(number) {
+    return parseFloat(number.toFixed(1))
   }
 
   useEffect(() => {
@@ -54,18 +76,6 @@ export default function AddPurchase() {
         : 98
     )
   }, [carbonFootprintSum])
-
-  function deleteFood(index) {
-    const deletedItem = purchasedFood.find(
-      (_, itemPosition) => itemPosition === index
-    )
-    setPurchasedFood(
-      purchasedFood.filter((_, itemPosition) => itemPosition !== index)
-    )
-    setCarbonFootprintSum(
-      (carbonFootprintSum * 100 - deletedItem.co2 * 100) / 100
-    )
-  }
 
   useEffect(() => {
     saveLocally('purchasedFood', purchasedFood)
@@ -90,14 +100,14 @@ export default function AddPurchase() {
           <FoodListModal>
             <FoodList
               foodList={filteredFoodList}
-              onAddItem={addPurchasedFood}
+              onAddFood={handleAddFood}
               //disabled={isDisabled}
             />
           </FoodListModal>
         )}
         <PurchaseList
           purchasedFood={purchasedFood}
-          onDelete={deleteFood}
+          onRemoveFood={handleRemoveFood}
         ></PurchaseList>
       </WrapperStyled>
     </WhiteBox>
