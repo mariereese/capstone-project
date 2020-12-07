@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { ReactComponent as DeleteIcon } from '../../images/delete-icon.svg'
 
 export default function PurchaseList({ purchasedFood, onRemoveFood }) {
   return (
@@ -7,7 +8,9 @@ export default function PurchaseList({ purchasedFood, onRemoveFood }) {
       <ul>
         {purchasedFood.map(({ food, id }, index) => (
           <PurchasedFood key={index}>
-            <p onClick={() => onRemoveFood(index)}>X</p>
+            <p onClick={() => onRemoveFood(index)}>
+              <DeleteIcon />
+            </p>
             <p>{food}</p>
             <p>1000g</p>
           </PurchasedFood>
@@ -32,11 +35,16 @@ const PurchaseCard = styled.div`
 
 const PurchasedFood = styled.li`
   margin: 0 13px 0.4em;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 5% 75% 20%;
+  column-gap: 4px;
   color: var(--light-grey);
   list-style-type: none;
   font-weight: 300;
+
+  p:first-child {
+    place-self: center;
+  }
 
   p {
     margin: 0;
