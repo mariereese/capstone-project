@@ -3,7 +3,7 @@ import { ReactComponent as DeleteIcon } from '../../images/delete-icon.svg'
 
 export default function PurchaseList({ purchasedFood, onRemoveFood }) {
   return (
-    <PurchaseCard>
+    <Card>
       <h2>Einkauf:</h2>
       <ul>
         {purchasedFood.map(({ food, id }, index) => (
@@ -16,11 +16,11 @@ export default function PurchaseList({ purchasedFood, onRemoveFood }) {
           </PurchasedFood>
         ))}
       </ul>
-    </PurchaseCard>
+    </Card>
   )
 }
 
-const PurchaseCard = styled.div`
+const Card = styled.div`
   width: 100%;
   height: 370px;
   box-shadow: 0 0 10px var(--light-grey);

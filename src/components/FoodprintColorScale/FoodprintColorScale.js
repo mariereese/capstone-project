@@ -2,11 +2,9 @@ import styled from 'styled-components/macro'
 
 export default function FoodprintColorScale({ pointerPosition }) {
   return (
-    <>
-      <ColorScale>
-        <Pointer position={pointerPosition} />
-      </ColorScale>
-    </>
+    <ColorScale>
+      <Pointer position={pointerPosition} />
+    </ColorScale>
   )
 }
 
@@ -19,7 +17,7 @@ const ColorScale = styled.div`
   background: linear-gradient(
     90deg,
     var(--green) 0%,
-    #ebda58 50%,
+    var(--yellow) 50%,
     var(--orange) 95%
   );
 `

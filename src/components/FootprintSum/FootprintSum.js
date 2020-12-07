@@ -1,19 +1,19 @@
 import styled from 'styled-components/macro'
 import FoodprintColorScale from '../FoodprintColorScale/FoodprintColorScale'
 
-export default function SumFootprint({ sum, pointerPosition }) {
+export default function FootprintSum({ sum, pointerPosition }) {
   return (
-    <FootprintSumCard>
+    <Card>
       <h2>Foodprint:</h2>
       <p>
         {sum + ' '}kg CO<sub>2</sub>
       </p>
       <FoodprintColorScale pointerPosition={pointerPosition} />
-    </FootprintSumCard>
+    </Card>
   )
 }
 
-const FootprintSumCard = styled.div`
+const Card = styled.div`
   margin: 0;
   box-shadow: 0 0 10px var(--light-grey);
   border-radius: 21px;

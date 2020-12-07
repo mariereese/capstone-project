@@ -1,10 +1,10 @@
-import FoodList from '../../components/FoodList/FoodList'
-import SearchFood from '../../components/SearchFood/SearchFood'
-import styled from 'styled-components/macro'
 import { useState, useEffect } from 'react'
-import getFood from '../../services/getFood'
-import SumFootprint from '../../components/SumFootprint/SumFootprint'
+import styled from 'styled-components/macro'
+import FootprintSum from '../../components/FootprintSum/FootprintSum'
+import SearchFood from '../../components/SearchFood/SearchFood'
+import FoodList from '../../components/FoodList/FoodList'
 import PurchaseList from '../../components/PurchaseList/PurchaseList'
+import getFood from '../../services/getFood'
 import loadLocally from '../../lib/loadLocally'
 import saveLocally from '../../lib/savelocally'
 
@@ -26,7 +26,22 @@ export default function AddPurchase() {
       .catch((error) => console.log(error))
   }, [])
 
-  function handleChange(event) {
+  useEffect(() => {
+    setPointerPosition(
+      carbonFootprintSum <= 2000 / 365
+        ? Math.round((100 / (2000 / 365)) * carbonFootprintSum)
+        : 98
+    )
+  }, [carbonFootprintSum])
+
+  useEffect(() => {
+    saveLocally('purchasedFood', purchasedFood)
+  }, [purchasedFood])
+
+  useEffect(() => {
+    saveLocally('carbonFootprintSum', carbonFootprintSum)
+  }, [carbonFootprintSum])
+  function handleSearchInput(event) {
     setSearchInput(event.target.value)
   }
 
@@ -38,7 +53,7 @@ export default function AddPurchase() {
     foodListItem.food.toLowerCase().includes(searchInput.toLowerCase())
   )
 
-  function handleAddFood(id) {
+  function addFoodAndUpdateFootprintSum(id) {
     const addedItem = foodList.find((foodItem) => foodItem.id === id)
     setPurchasedFood([...purchasedFood, addedItem])
     setCarbonFootprintSum(
@@ -49,7 +64,7 @@ export default function AddPurchase() {
     setFoodListModal(!foodListModal)
   }
 
-  function handleRemoveFood(index) {
+  function removeFoodAndUpdateFootprintSum(index) {
     const deletedItem = purchasedFood.find(
       (_, itemPosition) => itemPosition === index
     )
@@ -67,45 +82,28 @@ export default function AddPurchase() {
     return parseFloat(number.toFixed(1))
   }
 
-  useEffect(() => {
-    setPointerPosition(
-      carbonFootprintSum <= 2000 / 365
-        ? Math.round((100 / (2000 / 365)) * carbonFootprintSum)
-        : 98
-    )
-  }, [carbonFootprintSum])
-
-  useEffect(() => {
-    saveLocally('purchasedFood', purchasedFood)
-  }, [purchasedFood])
-
-  useEffect(() => {
-    saveLocally('carbonFootprintSum', carbonFootprintSum)
-  }, [carbonFootprintSum])
-
   return (
     <WhiteBox>
       <WrapperStyled>
-        <SumFootprint
+        <FootprintSum
           sum={carbonFootprintSum}
           pointerPosition={pointerPosition}
         />
         <SearchFood
-          handleChange={handleChange}
+          handleChange={handleSearchInput}
           onSearchClick={toggleFoodListModal}
         />
         {foodListModal && (
           <FoodListModal>
             <FoodList
               foodList={filteredFoodList}
-              onAddFood={handleAddFood}
-              //disabled={isDisabled}
+              onAddFood={addFoodAndUpdateFootprintSum}
             />
           </FoodListModal>
         )}
         <PurchaseList
           purchasedFood={purchasedFood}
-          onRemoveFood={handleRemoveFood}
+          onRemoveFood={removeFoodAndUpdateFootprintSum}
         ></PurchaseList>
       </WrapperStyled>
     </WhiteBox>
