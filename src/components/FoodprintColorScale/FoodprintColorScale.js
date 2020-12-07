@@ -1,35 +1,35 @@
 import styled from 'styled-components/macro'
 
-export default function FoodprintOMeter({ pointerPosition }) {
+export default function FoodprintColorScale({ pointerPosition }) {
   return (
     <>
-      <ColorBar>
+      <ColorScale>
         <Pointer position={pointerPosition} />
-      </ColorBar>
+      </ColorScale>
     </>
   )
 }
 
-const ColorBar = styled.div`
+const ColorScale = styled.div`
+  margin: 10px auto;
+  position: relative;
+  width: 92%;
   height: 14px;
+  border-radius: 41px;
   background: linear-gradient(
     90deg,
     var(--green) 0%,
     #ebda58 50%,
     var(--orange) 95%
   );
-  border-radius: 41px;
-  width: 92%;
-  margin: 10px auto;
-  position: relative;
 `
 
 const Pointer = styled.div`
   height: 18px;
-  background-color: var(--dark-grey);
   width: 8px;
-  border-radius: 20px;
   position: absolute;
   top: -2px;
   left: ${(props) => props.position}%;
+  border-radius: 20px;
+  background-color: var(--dark-grey);
 `

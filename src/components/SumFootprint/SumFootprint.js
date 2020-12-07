@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
-import FoodPrintOMeter from '../FoodprintOMeter/FoodprintOMeter'
+import FoodprintColorScale from '../FoodprintColorScale/FoodprintColorScale'
 
 export default function SumFootprint({ sum, pointerPosition }) {
   return (
@@ -8,7 +8,7 @@ export default function SumFootprint({ sum, pointerPosition }) {
       <p>
         {sum + ' '}kg CO<sub>2</sub>
       </p>
-      <FoodPrintOMeter pointerPosition={pointerPosition} />
+      <FoodprintColorScale pointerPosition={pointerPosition} />
     </FootprintSumCard>
   )
 }

@@ -27,8 +27,8 @@ const FoodListStyled = styled.ul`
 `
 
 const FoodListItem = styled.li`
-  list-style-type: none;
   padding: 6px 10px;
+  list-style-type: none;
   font-weight: 300;
   font-size: 1.25rem;
   color: var(--dark-grey);

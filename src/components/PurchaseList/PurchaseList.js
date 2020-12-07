@@ -18,11 +18,11 @@ export default function PurchaseList({ purchasedFood, onRemoveFood }) {
 }
 
 const PurchaseCard = styled.div`
+  width: 100%;
+  height: 370px;
   box-shadow: 0 0 10px var(--light-grey);
   border: none;
   border-radius: 21px;
-  width: 100%;
-  height: 370px;
 
   ul {
     margin: 0;
@@ -31,12 +31,12 @@ const PurchaseCard = styled.div`
 `
 
 const PurchasedFood = styled.li`
+  margin: 0 13px 0.4em;
   display: flex;
   justify-content: space-between;
   color: var(--light-grey);
   list-style-type: none;
   font-weight: 300;
-  margin: 0 13px 0.4em;
 
   p {
     margin: 0;

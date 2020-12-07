@@ -63,8 +63,6 @@ export default function AddPurchase() {
     )
   }
 
-  console.log(carbonFootprintSum)
-
   function roundNumber(number) {
     return parseFloat(number.toFixed(1))
   }
