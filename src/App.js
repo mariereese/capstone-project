@@ -1,17 +1,11 @@
-import FoodList from './components/FoodList/FoodList'
-import styled from 'styled-components/macro'
+import Header from './components/Header/Header'
+import AddPurchase from './pages/AddPurchase/AddPurchase'
 
 export default function App() {
   return (
     <>
-      <AddPurchase>
-        <FoodList />
-      </AddPurchase>
+      <Header title="Einkauf hinzufügen" />
+      <AddPurchase />
     </>
   )
 }
-
-const AddPurchase = styled.div`
-  display: grid;
-  grid-template-columns: 380px;
-`

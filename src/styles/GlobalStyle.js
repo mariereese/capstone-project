@@ -5,18 +5,28 @@ export default createGlobalStyle`
   
   * {
     box-sizing: border-box;
+    font-size: 16px;
   }
 
   body {
     margin: 0;
     padding: 0;
     font-family: 'Rubik', sans-serif;
+    background-color: var(--green)
+  }
+
+  h2 {
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--dark-grey);
+    margin: 13px;
   }
 
   :root {
     --dark-grey: #3f3f3b;
     --light-grey: #767670;
     --green: #5d987b;
+    --yellow: #ebda58;
     --orange: #e07a5f;
   }
 `
