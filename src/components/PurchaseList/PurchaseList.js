@@ -8,11 +8,11 @@ export default function PurchaseList({ purchasedFood, onRemoveFood }) {
       <ul>
         {purchasedFood.map(({ food, id }, index) => (
           <PurchasedFood key={index}>
+            <p>{food}</p>
+            <p>1000g</p>
             <p onClick={() => onRemoveFood(index)}>
               <DeleteIcon />
             </p>
-            <p>{food}</p>
-            <p>1000g</p>
           </PurchasedFood>
         ))}
       </ul>
@@ -36,13 +36,13 @@ const PurchaseCard = styled.div`
 const PurchasedFood = styled.li`
   margin: 0 13px 0.4em;
   display: grid;
-  grid-template-columns: 5% 75% 20%;
+  grid-template-columns: 73% 20% 7%;
   column-gap: 4px;
   color: var(--light-grey);
   list-style-type: none;
   font-weight: 300;
 
-  p:first-child {
+  p:last-child {
     place-self: center;
   }
 
