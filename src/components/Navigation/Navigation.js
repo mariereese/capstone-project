@@ -36,26 +36,22 @@ const NavBar = styled.footer`
   box-shadow: 0 0 6px var(--light-grey);
 `
 
-const NavLinkStyled = styled(NavLink)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
 const PageName = styled.p`
   font-size: 0.7em;
-  color: white;
   margin: 0 0 2px;
+  color: white;
 `
 
 const DashboardIcon = styled(Dashboard)`
   width: 31px;
   overflow: visible;
+  fill: var(--green);
 `
 
 const ProfileIcon = styled(Profile)`
-  width: 31px;
+  width: 33px;
   overflow: visible;
+  fill: var(--green);
 `
 
 const PlusButton = styled.button`
@@ -75,4 +71,17 @@ const PlusIcon = styled(Plus)`
   height: 60%;
   transform: translate(-25px, -20px);
   overflow: visible;
+`
+
+const NavLinkStyled = styled(NavLink)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--green);
+
+  &.active {
+    color: #fff;
+    fill: #fff;
+  }
 `
