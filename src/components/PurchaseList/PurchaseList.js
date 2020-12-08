@@ -23,7 +23,7 @@ export default function PurchaseList({ purchasedFood, onRemoveFood }) {
 const Card = styled.div`
   width: 100%;
   height: 370px;
-  box-shadow: 0 0 10px var(--light-grey);
+  box-shadow: 0 0 6px var(--light-grey);
   border: none;
   border-radius: 21px;
 
