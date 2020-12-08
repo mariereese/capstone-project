@@ -113,6 +113,7 @@ export default function AddPurchase() {
 const WhiteBox = styled.div`
   padding-bottom: 55px;
   width: 100%;
+  height: 90vh;
   position: absolute;
   box-shadow: 0 0 6px var(--light-grey);
   border-top-left-radius: 21px;

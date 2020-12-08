@@ -22,10 +22,11 @@ export default function PurchaseList({ purchasedFood, onRemoveFood }) {
 
 const Card = styled.div`
   width: 100%;
-  height: 370px;
+  height: 47vh;
   box-shadow: 0 0 6px var(--light-grey);
   border: none;
   border-radius: 21px;
+  overflow-y: scroll;
 
   ul {
     margin: 0;

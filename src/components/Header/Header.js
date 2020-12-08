@@ -15,7 +15,7 @@ const Header = styled.header`
 
   h1 {
     margin: 0;
-    padding: 24px 0;
+    padding: 20px 0 16px;
     color: white;
     font-size: 1.625rem;
     font-weight: 400;
