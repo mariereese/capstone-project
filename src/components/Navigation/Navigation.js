@@ -22,8 +22,8 @@ export default function Navigation() {
 }
 
 const NavBar = styled.footer`
-  position: fixed;
-  bottom: 0;
+  /* position: fixed;
+  bottom: 0; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
