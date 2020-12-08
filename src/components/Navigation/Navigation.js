@@ -25,15 +25,15 @@ export default function Navigation() {
 }
 
 const NavBar = styled.footer`
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 0 6px var(--light-grey);
+  border-radius: 21px 21px 0 0;
+  background-color: var(--green);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 60px;
-  background-color: var(--green);
-  border-radius: 21px 21px 0 0;
-  box-shadow: 0 0 6px var(--light-grey);
 `
 const NavLinkStyled = styled(NavLink)`
   display: flex;
@@ -53,9 +53,9 @@ const NavLinkStyled = styled(NavLink)`
 `
 
 const PageName = styled.p`
-  font-size: 0.7em;
   margin: 0 0 2px;
   color: white;
+  font-size: 0.7em;
 `
 
 const DashboardIcon = styled(Dashboard)`
@@ -71,20 +71,20 @@ const ProfileIcon = styled(Profile)`
 `
 
 const PlusButton = styled.button`
-  border-radius: 100%;
-  border: none;
-  background: radial-gradient(circle, var(--orange) 51%, #e9aa7c 100%);
-  padding: 1em;
   width: 72px;
   height: 72px;
+  box-shadow: 0 0 6px #e9aa7c;
+  border: none;
+  border-radius: 100%;
+  padding: 1em;
+  background: radial-gradient(circle, var(--orange) 51%, #e9aa7c 100%);
   position: absolute;
   bottom: 40%;
-  box-shadow: 0 0 6px #e9aa7c;
 `
 
 const PlusIcon = styled(Plus)`
-  position: absolute;
   height: 60%;
-  transform: translate(-25px, -20px);
   overflow: visible;
+  position: absolute;
+  transform: translate(-25px, -20px);
 `
