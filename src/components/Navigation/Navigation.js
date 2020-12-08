@@ -35,6 +35,22 @@ const NavBar = styled.footer`
   border-radius: 21px 21px 0 0;
   box-shadow: 0 0 6px var(--light-grey);
 `
+const NavLinkStyled = styled(NavLink)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--green);
+
+  &.hover {
+    text-decoration: underline;
+  }
+
+  &.active {
+    color: #fff;
+    fill: #fff;
+  }
+`
 
 const PageName = styled.p`
   font-size: 0.7em;
@@ -71,17 +87,4 @@ const PlusIcon = styled(Plus)`
   height: 60%;
   transform: translate(-25px, -20px);
   overflow: visible;
-`
-
-const NavLinkStyled = styled(NavLink)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: var(--green);
-
-  &.active {
-    color: #fff;
-    fill: #fff;
-  }
 `
