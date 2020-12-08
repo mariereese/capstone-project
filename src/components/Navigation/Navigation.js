@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { NavLink } from 'react-router-dom'
 import { ReactComponent as Dashboard } from '../../images/nav-dashboard-icon.svg'
 import { ReactComponent as Profile } from '../../images/nav-profile-icon.svg'
 import { ReactComponent as Plus } from '../../images/plus-icon.svg'
@@ -6,24 +7,24 @@ import { ReactComponent as Plus } from '../../images/plus-icon.svg'
 export default function Navigation() {
   return (
     <NavBar>
-      <div>
+      <NavLinkStyled exact to="/">
         <DashboardIcon />
         <PageName>Dashboard</PageName>
-      </div>
-      <PlusButton>
-        <PlusIcon />
-      </PlusButton>
-      <div>
+      </NavLinkStyled>
+      <NavLinkStyled to="einkauf-hinzufuegen">
+        <PlusButton>
+          <PlusIcon />
+        </PlusButton>
+      </NavLinkStyled>
+      <NavLinkStyled to="/profil">
         <ProfileIcon />
         <PageName>Profil</PageName>
-      </div>
+      </NavLinkStyled>
     </NavBar>
   )
 }
 
 const NavBar = styled.footer`
-  /* position: fixed;
-  bottom: 0; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -33,13 +34,14 @@ const NavBar = styled.footer`
   background-color: var(--green);
   border-radius: 21px 21px 0 0;
   box-shadow: 0 0 6px var(--light-grey);
-
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 `
+
+const NavLinkStyled = styled(NavLink)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 const PageName = styled.p`
   font-size: 0.7em;
   color: white;
@@ -63,8 +65,8 @@ const PlusButton = styled.button`
   padding: 1em;
   width: 72px;
   height: 72px;
-  position: relative;
-  bottom: 50%;
+  position: absolute;
+  bottom: 40%;
   box-shadow: 0 0 6px #e9aa7c;
 `
 
