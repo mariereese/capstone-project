@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import Header from '../../components/Header/Header'
+import PageWrapper from '../../components/PageWrapper'
 import FootprintSum from '../../components/FootprintSum/FootprintSum'
 import SearchFood from '../../components/SearchFood/SearchFood'
 import FoodList from '../../components/FoodList/FoodList'
@@ -86,8 +87,8 @@ export default function AddPurchase() {
   return (
     <>
       <Header title="Einkauf hinzufügen" />
-      <WhiteBox>
-        <WrapperStyled>
+      <PageWrapper>
+        <ContentGrid>
           <FootprintSum
             sum={carbonFootprintSum}
             pointerPosition={pointerPosition}
@@ -108,24 +109,13 @@ export default function AddPurchase() {
             purchasedFood={purchasedFood}
             onRemoveFood={removeFoodAndUpdateFootprintSum}
           ></PurchaseList>
-        </WrapperStyled>
-      </WhiteBox>
+        </ContentGrid>
+      </PageWrapper>
     </>
   )
 }
 
-const WhiteBox = styled.div`
-  padding-bottom: 55px;
-  width: 100%;
-  height: 90vh;
-  position: absolute;
-  box-shadow: 0 0 6px var(--light-grey);
-  border-top-left-radius: 21px;
-  border-top-right-radius: 21px;
-  background-color: white;
-`
-
-const WrapperStyled = styled.div`
+const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   margin: 20px;
