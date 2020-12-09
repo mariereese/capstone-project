@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
+import Header from '../../components/Header/Header'
 import FootprintSum from '../../components/FootprintSum/FootprintSum'
 import SearchFood from '../../components/SearchFood/SearchFood'
 import FoodList from '../../components/FoodList/FoodList'
@@ -83,37 +84,42 @@ export default function AddPurchase() {
   }
 
   return (
-    <WhiteBox>
-      <WrapperStyled>
-        <FootprintSum
-          sum={carbonFootprintSum}
-          pointerPosition={pointerPosition}
-        />
-        <SearchFood
-          handleChange={handleSearchInput}
-          onSearchClick={toggleFoodListModal}
-        />
-        {foodListModal && (
-          <FoodListModal>
-            <FoodList
-              foodList={filteredFoodList}
-              onAddFood={addFoodAndUpdateFootprintSum}
-            />
-          </FoodListModal>
-        )}
-        <PurchaseList
-          purchasedFood={purchasedFood}
-          onRemoveFood={removeFoodAndUpdateFootprintSum}
-        ></PurchaseList>
-      </WrapperStyled>
-    </WhiteBox>
+    <>
+      <Header title="Einkauf hinzufügen" />
+      <WhiteBox>
+        <WrapperStyled>
+          <FootprintSum
+            sum={carbonFootprintSum}
+            pointerPosition={pointerPosition}
+          />
+          <SearchFood
+            handleChange={handleSearchInput}
+            onSearchClick={toggleFoodListModal}
+          />
+          {foodListModal && (
+            <FoodListModal>
+              <FoodList
+                foodList={filteredFoodList}
+                onAddFood={addFoodAndUpdateFootprintSum}
+              />
+            </FoodListModal>
+          )}
+          <PurchaseList
+            purchasedFood={purchasedFood}
+            onRemoveFood={removeFoodAndUpdateFootprintSum}
+          ></PurchaseList>
+        </WrapperStyled>
+      </WhiteBox>
+    </>
   )
 }
 
 const WhiteBox = styled.div`
+  padding-bottom: 55px;
   width: 100%;
+  height: 90vh;
   position: absolute;
-  box-shadow: 0 0 10px var(--light-grey);
+  box-shadow: 0 0 6px var(--light-grey);
   border-top-left-radius: 21px;
   border-top-right-radius: 21px;
   background-color: white;

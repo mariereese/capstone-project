@@ -15,7 +15,7 @@ export default function SearchFood({ handleChange, onSearchClick }) {
 
 const SearchBar = styled.input`
   display: block;
-  box-shadow: 0 0 10px var(--light-grey);
+  box-shadow: 0 0 6px var(--light-grey);
   border: none;
   border-radius: 21px;
   width: 100%;
