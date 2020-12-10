@@ -6,6 +6,8 @@ import FootprintSum from '../../components/FootprintSum/FootprintSum'
 import SearchFood from '../../components/SearchFood/SearchFood'
 import FoodList from '../../components/FoodList/FoodList'
 import PurchaseList from '../../components/PurchaseList/PurchaseList'
+import Navigation from '../../components/Navigation/Navigation'
+import { ReactComponent as Save } from '../../images/save-icon.svg'
 import getFood from '../../services/getFood'
 import loadLocally from '../../lib/loadLocally'
 import saveLocally from '../../lib/savelocally'
@@ -21,6 +23,7 @@ export default function AddPurchase() {
     loadLocally('carbonFootprintSum') ?? 0
   )
   const [pointerPosition, setPointerPosition] = useState(0)
+  const [savedPurchase, setSavedPurchase] = useState([])
 
   useEffect(() => {
     getFood()
@@ -43,6 +46,10 @@ export default function AddPurchase() {
   useEffect(() => {
     saveLocally('carbonFootprintSum', carbonFootprintSum)
   }, [carbonFootprintSum])
+
+  useEffect(() => {
+    saveLocally('savedPurchase', savedPurchase)
+  }, [savedPurchase])
 
   function handleSearchInput(event) {
     setSearchInput(event.target.value)
@@ -85,6 +92,13 @@ export default function AddPurchase() {
     return parseFloat(number.toFixed(1))
   }
 
+  function savePurchase() {
+    setSavedPurchase([
+      ...savedPurchase,
+      { food: purchasedFood, sum: carbonFootprintSum },
+    ])
+  }
+
   return (
     <>
       <Header title="Einkauf hinzufügen" />
@@ -111,8 +125,14 @@ export default function AddPurchase() {
             onRemoveFood={removeFoodAndUpdateFootprintSum}
           ></PurchaseList>
         </ContentGrid>
-        <SaveButton></SaveButton>
       </PageWrapper>
+      <AppNavigation>
+        <Navigation
+          savePurchase={savePurchase}
+          isDisabled={false}
+          icon={<SaveIcon />}
+        />
+      </AppNavigation>
     </>
   )
 }
@@ -127,17 +147,14 @@ const FoodListModal = styled.div`
   position: absolute;
   top: 205px;
 `
-
-const SaveButton = styled.button`
-  width: 72px;
-  height: 72px;
-  box-shadow: 0 0 6px #e9aa7c;
-  border: none;
-  border-radius: 100%;
-  padding: 1em;
-  background: radial-gradient(circle, var(--orange) 51%, #e9aa7c 100%);
+const AppNavigation = styled.div`
   position: fixed;
-  bottom: 90px;
-  right: 30px;
-  z-index: 100;
+  bottom: 0;
+  width: 100%;
+`
+const SaveIcon = styled(Save)`
+  width: 40px;
+  height: auto;
+  overflow: visible;
+  color: white;
 `

@@ -1,8 +1,8 @@
 import { Switch, Route } from 'react-router-dom'
 import AddPurchase from './pages/AddPurchase/AddPurchase'
 import Profile from './pages/Profile/Profile'
-import Navigation from './components/Navigation/Navigation'
-import styled from 'styled-components/macro'
+//import Navigation from './components/Navigation/Navigation'
+//import styled from 'styled-components/macro'
 
 export default function App() {
   return (
@@ -15,15 +15,15 @@ export default function App() {
           <Profile />
         </Route>
       </Switch>
-      <AppNavigation>
+      {/* <AppNavigation>
         <Navigation />
-      </AppNavigation>
+      </AppNavigation> */}
     </>
   )
 }
 
-const AppNavigation = styled.div`
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-`
+// const AppNavigation = styled.div`
+//   position: fixed;
+//   bottom: 0;
+//   width: 100%;
+// `

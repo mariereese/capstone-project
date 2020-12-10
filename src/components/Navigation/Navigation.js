@@ -2,9 +2,8 @@ import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
 import { ReactComponent as Dashboard } from '../../images/nav-dashboard-icon.svg'
 import { ReactComponent as Profile } from '../../images/nav-profile-icon.svg'
-import { ReactComponent as Plus } from '../../images/plus-icon.svg'
 
-export default function Navigation() {
+export default function Navigation({ icon, savePurchase, isDisabled }) {
   return (
     <NavBar>
       <NavLinkStyled exact to="/">
@@ -12,9 +11,7 @@ export default function Navigation() {
         <PageName>Dashboard</PageName>
       </NavLinkStyled>
       <NavLinkStyled to="einkauf-hinzufuegen">
-        <PlusButton>
-          <PlusIcon />
-        </PlusButton>
+        <PlusButton onClick={() => savePurchase()}>{icon}</PlusButton>
       </NavLinkStyled>
       <NavLinkStyled to="/profil">
         <ProfileIcon />
@@ -25,7 +22,6 @@ export default function Navigation() {
 }
 
 const NavBar = styled.footer`
-  width: 100%;
   height: 60px;
   box-shadow: 0 0 6px var(--light-grey);
   border-radius: 21px 21px 0 0;
@@ -80,11 +76,4 @@ const PlusButton = styled.button`
   background: radial-gradient(circle, var(--orange) 51%, #e9aa7c 100%);
   position: absolute;
   bottom: 40%;
-`
-
-const PlusIcon = styled(Plus)`
-  height: 60%;
-  overflow: visible;
-  position: absolute;
-  transform: translate(-25px, -20px);
 `
