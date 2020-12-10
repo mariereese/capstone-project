@@ -43,6 +43,7 @@ export default function AddPurchase() {
   useEffect(() => {
     saveLocally('carbonFootprintSum', carbonFootprintSum)
   }, [carbonFootprintSum])
+
   function handleSearchInput(event) {
     setSearchInput(event.target.value)
   }
@@ -110,6 +111,7 @@ export default function AddPurchase() {
             onRemoveFood={removeFoodAndUpdateFootprintSum}
           ></PurchaseList>
         </ContentGrid>
+        <SaveButton></SaveButton>
       </PageWrapper>
     </>
   )
@@ -124,4 +126,18 @@ const ContentGrid = styled.div`
 const FoodListModal = styled.div`
   position: absolute;
   top: 205px;
+`
+
+const SaveButton = styled.button`
+  width: 72px;
+  height: 72px;
+  box-shadow: 0 0 6px #e9aa7c;
+  border: none;
+  border-radius: 100%;
+  padding: 1em;
+  background: radial-gradient(circle, var(--orange) 51%, #e9aa7c 100%);
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  z-index: 100;
 `
