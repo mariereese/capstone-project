@@ -92,10 +92,16 @@ export default function AddPurchase() {
     return parseFloat(number.toFixed(1))
   }
 
+  let today = new Date()
+  const dd = today.getDate()
+  const mm = today.getMonth() + 1
+  const yyyy = today.getFullYear()
+  today = dd + '.' + mm + '.' + yyyy
+
   function savePurchase() {
     setSavedPurchase([
       ...savedPurchase,
-      { food: purchasedFood, sum: carbonFootprintSum },
+      { date: today, food: purchasedFood, sum: carbonFootprintSum },
     ])
   }
 

@@ -16,20 +16,25 @@ export default function Profile() {
       <Header title="Profil" />
       <PageWrapper>
         <ContentGrid>
-          <Card>
+          <AnnualGoalCard>
             <h2>Jahresziel:</h2>
             <p>
-              2000 kg CO<sub>2</sub>
+              2.000 kg CO<sub>2</sub>
             </p>
-          </Card>
-          <Card>
+          </AnnualGoalCard>
+          <LastPurchasesCard>
             <h2>letze Einkäufe:</h2>
-            <ul>
-              {savedPurchases.map(({ sum }) => (
-                <li>{sum}</li>
+            <LastPurchasesList>
+              {savedPurchases.map(({ sum, date }) => (
+                <li>
+                  <p>{date}</p>
+                  <p>
+                    {sum} kg CO<sub>2</sub>
+                  </p>
+                </li>
               ))}
-            </ul>
-          </Card>
+            </LastPurchasesList>
+          </LastPurchasesCard>
         </ContentGrid>
       </PageWrapper>
       <AppNavigation>
@@ -44,13 +49,36 @@ const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 12px;
-
+`
+const AnnualGoalCard = styled(Card)`
   p {
     margin: 0 0 13px;
     text-align: center;
     font-size: 2rem;
     font-weight: 400;
     color: var(--dark-grey);
+  }
+`
+const LastPurchasesCard = styled(Card)`
+  height: 40vh;
+  overflow-y: scroll;
+`
+
+const LastPurchasesList = styled.ul`
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0 13px 0.4em;
+    color: var(--light-grey);
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 300;
   }
 `
 

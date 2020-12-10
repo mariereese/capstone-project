@@ -11,7 +11,9 @@ export default function Navigation({ icon, savePurchase, isDisabled }) {
         <PageName>Dashboard</PageName>
       </NavLinkStyled>
       <NavLinkStyled to="einkauf-hinzufuegen">
-        <PlusButton onClick={() => savePurchase()}>{icon}</PlusButton>
+        <PlusButton onClick={() => !isDisabled && savePurchase()}>
+          {icon}
+        </PlusButton>
       </NavLinkStyled>
       <NavLinkStyled to="/profil">
         <ProfileIcon />
