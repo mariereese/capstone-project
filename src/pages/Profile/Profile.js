@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import Header from '../../components/Header/Header'
 import PageWrapper from '../../components/PageWrapper'
@@ -8,9 +8,11 @@ import { ReactComponent as Plus } from '../../images/plus-icon.svg'
 import loadLocally from '../../lib/loadLocally'
 
 export default function Profile() {
-  const [savedPurchases, setSavedPurchases] = useState(
-    loadLocally('savedPurchase') ?? []
-  )
+  const [savedPurchases, setSavedPurchases] = useState([])
+  useEffect(() => {
+    setSavedPurchases(loadLocally('savedPurchase') ?? [])
+  }, [])
+
   return (
     <>
       <Header title="Profil" />
@@ -23,7 +25,7 @@ export default function Profile() {
             </p>
           </AnnualGoalCard>
           <LastPurchasesCard>
-            <h2>letze Einkäufe:</h2>
+            <h2>letzte Einkäufe:</h2>
             <LastPurchasesList>
               {savedPurchases.map(({ sum, date }) => (
                 <li>
@@ -38,7 +40,7 @@ export default function Profile() {
         </ContentGrid>
       </PageWrapper>
       <AppNavigation>
-        <Navigation isDisabled={true} icon={<PlusIcon />} />
+        <Navigation isDisabled icon={<PlusIcon />} />
       </AppNavigation>
     </>
   )

@@ -23,8 +23,9 @@ export default function AddPurchase() {
     loadLocally('carbonFootprintSum') ?? 0
   )
   const [pointerPosition, setPointerPosition] = useState(0)
-  const [savedPurchase, setSavedPurchase] = useState([])
-
+  const [savedPurchase, setSavedPurchase] = useState(
+    loadLocally('savedPurchase') || []
+  )
   useEffect(() => {
     getFood()
       .then((data) => setFoodList(data))
@@ -38,6 +39,11 @@ export default function AddPurchase() {
         : 98
     )
   }, [carbonFootprintSum])
+
+  useEffect(() => {
+    setPurchasedFood([])
+    setCarbonFootprintSum(0)
+  }, [])
 
   useEffect(() => {
     saveLocally('purchasedFood', purchasedFood)
@@ -133,11 +139,7 @@ export default function AddPurchase() {
         </ContentGrid>
       </PageWrapper>
       <AppNavigation>
-        <Navigation
-          savePurchase={savePurchase}
-          isDisabled={false}
-          icon={<SaveIcon />}
-        />
+        <Navigation savePurchase={savePurchase} icon={<SaveIcon />} />
       </AppNavigation>
     </>
   )
