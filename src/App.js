@@ -8,10 +8,10 @@ export default function App() {
   return (
     <>
       <Switch>
-        <Route path="/einkauf-hinzufuegen">
+        <Route path="/add-purchase">
           <AddPurchase />
         </Route>
-        <Route path="/profil">
+        <Route path="/overview">
           <Profile />
         </Route>
       </Switch>

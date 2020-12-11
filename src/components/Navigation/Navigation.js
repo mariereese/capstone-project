@@ -10,14 +10,14 @@ export default function Navigation({ icon, savePurchase, isDisabled }) {
         <DashboardIcon />
         <PageName>Dashboard</PageName>
       </NavLinkStyled>
-      <NavLinkStyled to="einkauf-hinzufuegen">
+      <NavLinkStyled to="add-purchase">
         <PlusButton onClick={() => !isDisabled && savePurchase()}>
           {icon}
         </PlusButton>
       </NavLinkStyled>
-      <NavLinkStyled to="/profil">
+      <NavLinkStyled to="/overview">
         <ProfileIcon />
-        <PageName>Profil</PageName>
+        <PageName>Übersicht</PageName>
       </NavLinkStyled>
     </NavBar>
   )

@@ -5,6 +5,8 @@ import PageWrapper from '../../components/PageWrapper'
 import Navigation from '../../components/Navigation/Navigation'
 import Card from '../../components/Card'
 import { ReactComponent as Plus } from '../../images/plus-icon.svg'
+import { ReactComponent as Edit } from '../../images/edit-icon.svg'
+import { ReactComponent as ShoppingBag } from '../../images/shopping-bag.svg'
 import loadLocally from '../../lib/loadLocally'
 
 export default function Profile() {
@@ -15,7 +17,7 @@ export default function Profile() {
 
   return (
     <>
-      <Header title="Profil" />
+      <Header title="Übersicht" />
       <PageWrapper>
         <ContentGrid>
           <AnnualGoalCard>
@@ -23,12 +25,14 @@ export default function Profile() {
             <p>
               2.000 kg CO<sub>2</sub>
             </p>
+            <EditIcon />
           </AnnualGoalCard>
           <LastPurchasesCard>
             <h2>letzte Einkäufe:</h2>
             <LastPurchasesList>
               {savedPurchases.map(({ sum, date }) => (
                 <li>
+                  <PurchaseIcon />
                   <p>{date}</p>
                   <p>
                     {sum} kg CO<sub>2</sub>
@@ -71,14 +75,21 @@ const LastPurchasesList = styled.ul`
   padding: 0;
 
   li {
-    margin: 0 13px 0.4em;
+    margin: 0 30px 10px 10px;
     color: var(--light-grey);
     list-style-type: none;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 20px 1fr 1fr;
+    grid-column-gap: 10px;
+  }
+
+  p:last-child {
+    justify-self: end;
   }
 
   p {
+    margin: 0;
+    padding: 0;
     font-size: 1.25rem;
     font-weight: 300;
   }
@@ -95,4 +106,15 @@ const PlusIcon = styled(Plus)`
   overflow: visible;
   position: absolute;
   transform: translate(-25px, -20px);
+`
+const EditIcon = styled(Edit)`
+  overflow: visible;
+`
+
+const PurchaseIcon = styled(ShoppingBag)`
+  width: 18px;
+  height: auto;
+  overflow: visible;
+  color: var(--green);
+  align-self: start;
 `
