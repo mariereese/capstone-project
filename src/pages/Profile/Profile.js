@@ -4,9 +4,10 @@ import Header from '../../components/Header/Header'
 import PageWrapper from '../../components/PageWrapper'
 import Navigation from '../../components/Navigation/Navigation'
 import Card from '../../components/Card'
+import SavedPurchase from '../../components/SavedPurchase/SavedPurchase'
 import { ReactComponent as Plus } from '../../images/plus-icon.svg'
 import { ReactComponent as Edit } from '../../images/edit-icon.svg'
-import { ReactComponent as ShoppingBag } from '../../images/shopping-bag.svg'
+
 import loadLocally from '../../lib/loadLocally'
 
 export default function Profile() {
@@ -24,20 +25,18 @@ export default function Profile() {
             <h2>Jahresziel:</h2>
             <p>
               2.000 kg CO<sub>2</sub>
+              <EditIcon />
             </p>
-            <EditIcon />
           </AnnualGoalCard>
           <LastPurchasesCard>
             <h2>letzte Einkäufe:</h2>
             <LastPurchasesList>
-              {savedPurchases.map(({ sum, date }) => (
-                <li>
-                  <PurchaseIcon />
-                  <p>{date}</p>
-                  <p>
-                    {sum} kg CO<sub>2</sub>
-                  </p>
-                </li>
+              {savedPurchases.map(({ sum, date, purchasedFood }) => (
+                <SavedPurchase
+                  carbonFootprintSum={sum}
+                  purchaseDate={date}
+                  purchasedFood={purchasedFood}
+                />
               ))}
             </LastPurchasesList>
           </LastPurchasesCard>
@@ -74,14 +73,14 @@ const LastPurchasesList = styled.ul`
   margin: 0;
   padding: 0;
 
-  li {
+  /* li {
     margin: 0 30px 10px 10px;
     color: var(--light-grey);
     list-style-type: none;
     display: grid;
     grid-template-columns: 20px 1fr 1fr;
     grid-column-gap: 10px;
-  }
+  } */
 
   p:last-child {
     justify-self: end;
@@ -108,13 +107,9 @@ const PlusIcon = styled(Plus)`
   transform: translate(-25px, -20px);
 `
 const EditIcon = styled(Edit)`
-  overflow: visible;
-`
-
-const PurchaseIcon = styled(ShoppingBag)`
-  width: 18px;
+  width: 26px;
   height: auto;
   overflow: visible;
-  color: var(--green);
-  align-self: start;
+  color: var(--orange);
+  margin-left: 20px;
 `
