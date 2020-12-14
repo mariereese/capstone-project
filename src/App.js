@@ -1,6 +1,6 @@
 import { Switch, Route } from 'react-router-dom'
 import AddPurchase from './pages/AddPurchase/AddPurchase'
-import Profile from './pages/Profile/Profile'
+import Overview from './pages/Overview/Overview'
 //import Navigation from './components/Navigation/Navigation'
 //import styled from 'styled-components/macro'
 
@@ -12,7 +12,7 @@ export default function App() {
           <AddPurchase />
         </Route>
         <Route path="/overview">
-          <Profile />
+          <Overview />
         </Route>
       </Switch>
       {/* <AppNavigation>

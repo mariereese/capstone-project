@@ -146,9 +146,9 @@ export default function AddPurchase() {
 }
 
 const ContentGrid = styled.div`
+  margin: 20px;
   display: grid;
   grid-template-columns: 1fr;
-  margin: 20px;
   row-gap: 12px;
 `
 const FoodListModal = styled.div`
@@ -156,9 +156,9 @@ const FoodListModal = styled.div`
   top: 205px;
 `
 const AppNavigation = styled.div`
+  width: 100%;
   position: fixed;
   bottom: 0;
-  width: 100%;
 `
 const SaveIcon = styled(Save)`
   width: 40px;
