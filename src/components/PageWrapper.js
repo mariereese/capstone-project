@@ -10,4 +10,5 @@ const PageWrapper = styled.div`
   border-top-right-radius: 21px;
   background-color: white;
 `
+
 export default PageWrapper

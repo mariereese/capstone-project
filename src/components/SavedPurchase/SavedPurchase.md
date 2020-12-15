@@ -1,1 +1,3 @@
-`js <SavedPurchase/> `
+```js
+<SavedPurchase />
+```

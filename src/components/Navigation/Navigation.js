@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
 import { ReactComponent as Dashboard } from '../../images/nav-dashboard-icon.svg'
-import { ReactComponent as Profile } from '../../images/nav-profile-icon.svg'
+import { ReactComponent as ShoppingBag } from '../../images/shopping-bag.svg'
 
 export default function Navigation({ icon, savePurchase, isDisabled }) {
   return (
@@ -16,8 +16,8 @@ export default function Navigation({ icon, savePurchase, isDisabled }) {
         </PlusButton>
       </NavLinkStyled>
       <NavLinkStyled to="/overview">
-        <ProfileIcon />
-        <PageName>Übersicht</PageName>
+        <ShoppingBagIcon />
+        <PageName>Einkäufe</PageName>
       </NavLinkStyled>
     </NavBar>
   )
@@ -40,10 +40,6 @@ const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
   color: var(--green);
 
-  &.hover {
-    text-decoration: underline;
-  }
-
   &.active {
     color: #fff;
     fill: #fff;
@@ -62,7 +58,7 @@ const DashboardIcon = styled(Dashboard)`
   fill: var(--green);
 `
 
-const ProfileIcon = styled(Profile)`
+const ShoppingBagIcon = styled(ShoppingBag)`
   width: 33px;
   overflow: visible;
   fill: var(--green);
@@ -78,4 +74,9 @@ const PlusButton = styled.button`
   background: radial-gradient(circle, var(--orange) 51%, #e9aa7c 100%);
   position: absolute;
   bottom: 40%;
+
+  :hover {
+    transform: translateY(-15px);
+    transition: transform 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  }
 `
