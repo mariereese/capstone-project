@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FoodList renders correctly 1`] = `
+<ul
+  class="FoodList__FoodListStyled-sc-17fj5qi-0 wSPvz"
+>
+  <li
+    class="FoodList__FoodListItem-sc-17fj5qi-1 efPrRC"
+  >
+    Ananas, frisch
+  </li>
+  <li
+    class="FoodList__FoodListItem-sc-17fj5qi-1 efPrRC"
+  >
+    Ananas, per Schiff
+  </li>
+</ul>
+`;

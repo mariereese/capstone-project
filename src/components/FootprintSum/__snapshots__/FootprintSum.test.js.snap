@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FoodprintSum renders correctly 1`] = `
+<div
+  class="Card-sc-1j6wwxg-0 FootprintSum__CardStyled-mr075j-0 gnpUlV eICXJW"
+>
+  <h2>
+    Foodprint:
+  </h2>
+  <p>
+    0 
+    kg CO
+    <sub>
+      2
+    </sub>
+  </p>
+  <div
+    class="FoodprintColorScale__ColorScale-sc-1lwjm0x-0 kxLUjA"
+  >
+    <div
+      class="FoodprintColorScale__Pointer-sc-1lwjm0x-1 cRBVUi"
+    />
+  </div>
+</div>
+`;
