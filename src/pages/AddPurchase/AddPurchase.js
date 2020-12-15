@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import Header from '../../components/Header/Header'
+import PageWrapper from '../../components/PageWrapper'
 import FootprintSum from '../../components/FootprintSum/FootprintSum'
 import SearchFood from '../../components/SearchFood/SearchFood'
 import FoodList from '../../components/FoodList/FoodList'
 import PurchaseList from '../../components/PurchaseList/PurchaseList'
+import Navigation from '../../components/Navigation/Navigation'
+import { ReactComponent as Save } from '../../images/save-icon.svg'
 import getFood from '../../services/getFood'
 import loadLocally from '../../lib/loadLocally'
 import saveLocally from '../../lib/savelocally'
@@ -20,7 +23,9 @@ export default function AddPurchase() {
     loadLocally('carbonFootprintSum') ?? 0
   )
   const [pointerPosition, setPointerPosition] = useState(0)
-
+  const [savedPurchase, setSavedPurchase] = useState(
+    loadLocally('savedPurchase') || []
+  )
   useEffect(() => {
     getFood()
       .then((data) => setFoodList(data))
@@ -36,12 +41,22 @@ export default function AddPurchase() {
   }, [carbonFootprintSum])
 
   useEffect(() => {
+    setPurchasedFood([])
+    setCarbonFootprintSum(0)
+  }, [])
+
+  useEffect(() => {
     saveLocally('purchasedFood', purchasedFood)
   }, [purchasedFood])
 
   useEffect(() => {
     saveLocally('carbonFootprintSum', carbonFootprintSum)
   }, [carbonFootprintSum])
+
+  useEffect(() => {
+    saveLocally('savedPurchase', savedPurchase)
+  }, [savedPurchase])
+
   function handleSearchInput(event) {
     setSearchInput(event.target.value)
   }
@@ -83,11 +98,24 @@ export default function AddPurchase() {
     return parseFloat(number.toFixed(1))
   }
 
+  let today = new Date()
+  const dd = today.getDate()
+  const mm = today.getMonth() + 1
+  const yyyy = today.getFullYear()
+  today = dd + '.' + mm + '.' + yyyy
+
+  function savePurchase() {
+    setSavedPurchase([
+      ...savedPurchase,
+      { date: today, purchasedFood: purchasedFood, sum: carbonFootprintSum },
+    ])
+  }
+
   return (
     <>
       <Header title="Einkauf hinzufügen" />
-      <WhiteBox>
-        <WrapperStyled>
+      <PageWrapper>
+        <ContentGrid>
           <FootprintSum
             sum={carbonFootprintSum}
             pointerPosition={pointerPosition}
@@ -108,30 +136,33 @@ export default function AddPurchase() {
             purchasedFood={purchasedFood}
             onRemoveFood={removeFoodAndUpdateFootprintSum}
           ></PurchaseList>
-        </WrapperStyled>
-      </WhiteBox>
+        </ContentGrid>
+      </PageWrapper>
+      <AppNavigation>
+        <Navigation savePurchase={savePurchase} icon={<SaveIcon />} />
+      </AppNavigation>
     </>
   )
 }
 
-const WhiteBox = styled.div`
-  padding-bottom: 55px;
-  width: 100%;
-  height: 90vh;
-  position: absolute;
-  box-shadow: 0 0 6px var(--light-grey);
-  border-top-left-radius: 21px;
-  border-top-right-radius: 21px;
-  background-color: white;
-`
-
-const WrapperStyled = styled.div`
+const ContentGrid = styled.div`
+  margin: 20px;
   display: grid;
   grid-template-columns: 1fr;
-  margin: 20px;
   row-gap: 12px;
 `
 const FoodListModal = styled.div`
   position: absolute;
   top: 205px;
+`
+const AppNavigation = styled.div`
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+`
+const SaveIcon = styled(Save)`
+  width: 40px;
+  height: auto;
+  overflow: visible;
+  color: white;
 `

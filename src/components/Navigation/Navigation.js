@@ -1,31 +1,29 @@
 import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
 import { ReactComponent as Dashboard } from '../../images/nav-dashboard-icon.svg'
-import { ReactComponent as Profile } from '../../images/nav-profile-icon.svg'
-import { ReactComponent as Plus } from '../../images/plus-icon.svg'
+import { ReactComponent as ShoppingBag } from '../../images/shopping-bag.svg'
 
-export default function Navigation() {
+export default function Navigation({ icon, savePurchase, isDisabled }) {
   return (
     <NavBar>
       <NavLinkStyled exact to="/">
         <DashboardIcon />
         <PageName>Dashboard</PageName>
       </NavLinkStyled>
-      <NavLinkStyled to="einkauf-hinzufuegen">
-        <PlusButton>
-          <PlusIcon />
+      <NavLinkStyled to="add-purchase">
+        <PlusButton onClick={() => !isDisabled && savePurchase()}>
+          {icon}
         </PlusButton>
       </NavLinkStyled>
-      <NavLinkStyled to="/profil">
-        <ProfileIcon />
-        <PageName>Profil</PageName>
+      <NavLinkStyled to="/overview">
+        <ShoppingBagIcon />
+        <PageName>Einkäufe</PageName>
       </NavLinkStyled>
     </NavBar>
   )
 }
 
 const NavBar = styled.footer`
-  width: 100%;
   height: 60px;
   box-shadow: 0 0 6px var(--light-grey);
   border-radius: 21px 21px 0 0;
@@ -41,10 +39,6 @@ const NavLinkStyled = styled(NavLink)`
   align-items: center;
   text-decoration: none;
   color: var(--green);
-
-  &.hover {
-    text-decoration: underline;
-  }
 
   &.active {
     color: #fff;
@@ -64,7 +58,7 @@ const DashboardIcon = styled(Dashboard)`
   fill: var(--green);
 `
 
-const ProfileIcon = styled(Profile)`
+const ShoppingBagIcon = styled(ShoppingBag)`
   width: 33px;
   overflow: visible;
   fill: var(--green);
@@ -80,11 +74,9 @@ const PlusButton = styled.button`
   background: radial-gradient(circle, var(--orange) 51%, #e9aa7c 100%);
   position: absolute;
   bottom: 40%;
-`
 
-const PlusIcon = styled(Plus)`
-  height: 60%;
-  overflow: visible;
-  position: absolute;
-  transform: translate(-25px, -20px);
+  :hover {
+    transform: translateY(-15px);
+    transition: transform 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  }
 `

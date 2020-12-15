@@ -1,21 +1,22 @@
 import styled from 'styled-components/macro'
+import Card from '../Card'
 
 export default function SearchFood({ handleChange, onSearchClick }) {
   return (
-    <label>
+    <Card>
       <SearchBar
         type="text"
         placeholder="suchen..."
         onChange={handleChange}
         onClick={onSearchClick}
       />
-    </label>
+    </Card>
   )
 }
 
 const SearchBar = styled.input`
   display: block;
-  box-shadow: 0 0 6px var(--light-grey);
+  //box-shadow: 0 0 6px var(--light-grey);
   border: none;
   border-radius: 21px;
   width: 100%;
