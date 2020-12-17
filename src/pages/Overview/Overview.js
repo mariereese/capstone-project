@@ -25,11 +25,12 @@ export default function Overview() {
             <LastPurchasesList>
               {savedPurchases
                 .filter((value) => JSON.stringify(value) !== '{}')
-                .map(({ sum, date, purchasedFood }) => (
+                .map(({ sum, date, purchasedFood }, index) => (
                   <SavedPurchase
                     carbonFootprintSum={sum}
                     purchaseDate={date}
                     purchasedFood={purchasedFood}
+                    key={index}
                   />
                 ))}
             </LastPurchasesList>

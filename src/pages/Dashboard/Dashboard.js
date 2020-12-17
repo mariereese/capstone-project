@@ -21,7 +21,9 @@ export default function Dashboard() {
 
   // calculate annual sum
   useEffect(() => {
-    const numbers = allPurchases.map(({ sum }) => sum)
+    const numbers = allPurchases
+      .filter((value) => JSON.stringify(value) !== '{}')
+      .map(({ sum }) => sum)
     setAnnualFootprintSum(
       numbers.reduce((result, number) => {
         return result + number
