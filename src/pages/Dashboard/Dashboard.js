@@ -51,7 +51,7 @@ export default function Dashboard() {
           <AnnualFootprintCard>
             <h2>Dein Jahres-Foodprint:</h2>
             <h3>
-              {annualFootprintSum} kg CO<sub>2</sub>
+              {roundNumber(annualFootprintSum)} kg CO<sub>2</sub>
             </h3>
             <CompareFootprint>
               <ComparisonNumber>
@@ -91,7 +91,6 @@ const ContentGrid = styled.div`
 const AnnualFootprintCard = styled(Card)`
   h3 {
     margin: 0;
-    padding-bottom: 5px;
     text-align: center;
     font-size: 2.25rem;
     font-weight: 400;
@@ -104,7 +103,6 @@ const AnnualFootprintCard = styled(Card)`
 `
 const CompareFootprint = styled.div`
   margin: 13px;
-  border-top: 1px dotted var(--light-grey);
 
   p {
     margin: 0;
@@ -120,6 +118,8 @@ const ComparisonNumber = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px dotted var(--light-grey);
+  padding-top: 13px;
 
   p {
     color: var(--green);

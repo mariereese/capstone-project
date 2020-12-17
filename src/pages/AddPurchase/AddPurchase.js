@@ -107,7 +107,13 @@ export default function AddPurchase() {
   function savePurchase() {
     setSavedPurchase([
       ...savedPurchase,
-      { date: today, purchasedFood: purchasedFood, sum: carbonFootprintSum },
+      carbonFootprintSum !== 0
+        ? {
+            date: today,
+            purchasedFood: purchasedFood,
+            sum: carbonFootprintSum,
+          }
+        : {},
     ])
   }
 
