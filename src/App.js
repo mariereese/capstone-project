@@ -1,7 +1,7 @@
 import { Switch, Route } from 'react-router-dom'
 import AddPurchase from './pages/AddPurchase/AddPurchase'
 import Dashboard from './pages/Dashboard/Dashboard'
-import Overview from './pages/Overview/Overview'
+import Overview from './pages/LastPurchases/LastPurchases'
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
         <Route path="/add-purchase">
           <AddPurchase />
         </Route>
-        <Route path="/overview">
+        <Route path="/last-purchases">
           <Overview />
         </Route>
       </Switch>

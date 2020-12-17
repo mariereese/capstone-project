@@ -15,7 +15,7 @@ export default function Navigation({ icon, savePurchase, isDisabled }) {
           {icon}
         </PlusButton>
       </NavLinkStyled>
-      <NavLinkStyled to="/overview">
+      <NavLinkStyled to="/last-purchases">
         <ShoppingBagIcon />
         <PageName>Einkäufe</PageName>
       </NavLinkStyled>

@@ -28,8 +28,8 @@ export default function SavedPurchase({
       </div>
       {showPurchase && (
         <SavedPurchasedFood>
-          {purchasedFood.map(({ food, co2 }) => (
-            <FoodItem>
+          {purchasedFood.map(({ food, co2 }, index) => (
+            <FoodItem key={index}>
               <p className="food-item__name">{food}</p>
               <p className="food-item__co2">
                 {co2} kg CO<sub>2</sub>
