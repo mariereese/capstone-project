@@ -58,6 +58,8 @@ const LastPurchasesCard = styled(Card)`
 const LastPurchasesList = styled.ul`
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column-reverse;
 `
 
 const AppNavigation = styled.div`

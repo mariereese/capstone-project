@@ -44,7 +44,7 @@ export default function SavedPurchase({
 
 const LastPurchaseListItem = styled.li`
   div {
-    margin: 0.75em 1em 0.5em;
+    margin: 0.2em 1em 0.5em;
     display: grid;
     grid-template-columns: 20px 1fr 1fr;
     grid-column-gap: 10px;
