@@ -82,27 +82,6 @@ export default function AddPurchase() {
     setFoodListModal(!foodListModal)
   }
 
-  const [weightInput, setWeightInput] = useState({})
-
-  function handleWeightChange(event) {
-    setWeightInput({
-      [event.target.name]: event.target.value,
-    })
-  }
-
-  console.log('value', weightInput)
-
-  // function addFoodAndUpdateFootprintSum(id) {
-  //   const addedItem = foodList.find((foodItem) => foodItem.id === id)
-  //   setPurchasedFood([...purchasedFood, addedItem])
-  //   setCarbonFootprintSum(
-  //     (roundNumber(carbonFootprintSum * 100) +
-  //       roundNumber(addedItem.co2 * 100)) /
-  //       100
-  //   )
-  //   setFoodListModal(!foodListModal)
-  // }
-
   function removeFoodAndUpdateFootprintSum(index) {
     const deletedItem = purchasedFood.find(
       (_, itemPosition) => itemPosition === index
@@ -116,19 +95,6 @@ export default function AddPurchase() {
         100
     )
   }
-
-  // useEffect(
-  //   (index) => {
-  //     const selectedItem = purchasedFood.filter((_, itemPosition) => itemPosition === index)
-  //     const index = weightOfFood
-  //     setCarbonFootprintSum(
-  //       carbonFootprintSum -
-  //         selectedItem.co2 +
-  //         (selectedItem.co2 / 1000) * weightOfFood
-  //     )
-  //   },
-  //   [carbonFootprintSum, weightOfFood]
-  // )
 
   function roundNumber(number) {
     return parseFloat(number.toFixed(1))
@@ -177,7 +143,6 @@ export default function AddPurchase() {
           <PurchaseList
             purchasedFood={purchasedFood}
             onRemoveFood={removeFoodAndUpdateFootprintSum}
-            handleChange={handleWeightChange}
           ></PurchaseList>
         </ContentGrid>
       </PageWrapper>

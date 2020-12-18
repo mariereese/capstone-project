@@ -87,7 +87,7 @@ const ContentGrid = styled.div`
   margin: 20px;
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 12px;
+  row-gap: 22px;
 `
 
 const AnnualFootprintCard = styled(Card)`
@@ -104,11 +104,11 @@ const AnnualFootprintCard = styled(Card)`
   }
 `
 const CompareFootprint = styled.div`
-  margin: 13px;
+  margin: 30px 13px;
 
   p {
-    margin: 0;
-    font-size: 1.125rem;
+    margin: 10px 0;
+    font-size: 1.175rem;
     font-weight: 300;
     color: var(--dark-grey);
     text-align: center;

@@ -30,8 +30,8 @@ export default function SavedPurchase({
         <SavedPurchasedFood>
           {purchasedFood.map(({ food, co2 }, index) => (
             <FoodItem key={index}>
-              <p className="food-item__name">{food}</p>
-              <p className="food-item__co2">
+              <p>{food}</p>
+              <p>
                 {co2} kg CO<sub>2</sub>
               </p>
             </FoodItem>
@@ -82,10 +82,6 @@ const FoodItem = styled.li`
   margin-bottom: 0.5em;
   display: grid;
   grid-template-columns: 2fr 1fr;
-
-  .food-item__co2 {
-    align-self: center;
-  }
 
   p {
     font-size: 1.1rem;
