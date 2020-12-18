@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 import { ReactComponent as Hide } from '../../images/arrow-right.svg'
 import { ReactComponent as Show } from '../../images/arrow-down.svg'
 
@@ -40,6 +41,13 @@ export default function SavedPurchase({
       )}
     </LastPurchaseListItem>
   )
+}
+
+SavedPurchase.propTypes = {
+  carbonFootprintSum: PropTypes.number,
+  purchaseDate: PropTypes.string,
+  purchasedFood: PropTypes.array,
+  index: PropTypes.number,
 }
 
 const LastPurchaseListItem = styled.li`

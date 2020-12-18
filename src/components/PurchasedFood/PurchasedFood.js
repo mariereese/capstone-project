@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 import { ReactComponent as DeleteIcon } from '../../images/delete-icon.svg'
 
 export default function PurchasedFood({ onRemoveFood, food, index }) {
@@ -10,6 +11,12 @@ export default function PurchasedFood({ onRemoveFood, food, index }) {
       </p>
     </PurchasedFoodItem>
   )
+}
+
+PurchasedFood.propTypes = {
+  onRemoveFood: PropTypes.func,
+  food: PropTypes.string,
+  index: PropTypes.number,
 }
 
 const PurchasedFoodItem = styled.li`

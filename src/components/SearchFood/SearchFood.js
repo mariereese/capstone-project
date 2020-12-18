@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 import Card from '../Card'
 import { ReactComponent as Search } from '../../images/search-icon.svg'
 
@@ -14,6 +15,11 @@ export default function SearchFood({ handleChange, onSearchClick }) {
       />
     </SearchBar>
   )
+}
+
+SearchFood.propTypes = {
+  handleChange: PropTypes.func,
+  onSearchClick: PropTypes.func,
 }
 
 const SearchBar = styled(Card)`

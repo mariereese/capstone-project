@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 
 export default function FoodprintColorScale({ pointerPosition }) {
   return (
@@ -6,6 +7,10 @@ export default function FoodprintColorScale({ pointerPosition }) {
       <Pointer position={pointerPosition} />
     </ColorScale>
   )
+}
+
+FoodprintColorScale.propTypes = {
+  pointerPosition: PropTypes.number,
 }
 
 const ColorScale = styled.div`

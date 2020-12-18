@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 import Card from '../Card'
 import FoodprintColorScale from '../FoodprintColorScale/FoodprintColorScale'
 
@@ -12,6 +13,11 @@ export default function FootprintSum({ sum, pointerPosition }) {
       <FoodprintColorScale pointerPosition={pointerPosition} />
     </CardStyled>
   )
+}
+
+FootprintSum.propTypes = {
+  sum: PropTypes.number,
+  pointerPositiopn: PropTypes.number,
 }
 
 const CardStyled = styled(Card)`
