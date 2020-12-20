@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FoodprintColorScale renders correctly 1`] = `
+<div
+  class="FoodprintColorScale__ColorScale-sc-1lwjm0x-0 kxLUjA"
+>
+  <div
+    class="FoodprintColorScale__Pointer-sc-1lwjm0x-1 hyNTtu"
+  />
+</div>
+`;
