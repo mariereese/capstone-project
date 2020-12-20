@@ -32,6 +32,7 @@ Navigation.propTypes = {
 
 const NavBar = styled.footer`
   height: 60px;
+  width: 400px;
   box-shadow: 0 0 6px var(--light-grey);
   border-radius: 21px 21px 0 0;
   background-color: var(--green);

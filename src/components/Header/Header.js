@@ -15,8 +15,13 @@ AppHeader.propTypes = {
 
 const Header = styled.header`
   background-color: var(--green);
-  width: 100%;
+  width: 400px;
+  padding-bottom: 10px;
+  box-shadow: 0 0 6px var(--light-grey);
+  top: 0;
   text-align: center;
+  position: fixed;
+  z-index: -1;
 
   h1 {
     margin: 0;

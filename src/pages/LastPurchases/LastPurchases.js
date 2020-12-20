@@ -9,7 +9,7 @@ import { ReactComponent as Plus } from '../../images/plus-icon.svg'
 
 import loadLocally from '../../lib/loadLocally'
 
-export default function Overview() {
+export default function LastPurchases() {
   const [savedPurchases, setSavedPurchases] = useState([])
   useEffect(() => {
     setSavedPurchases(loadLocally('savedPurchase') ?? [])
@@ -45,7 +45,7 @@ export default function Overview() {
 }
 
 const ContentGrid = styled.div`
-  margin: 20px;
+  padding: 20px;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 12px;
@@ -63,7 +63,6 @@ const LastPurchasesList = styled.ul`
 `
 
 const AppNavigation = styled.div`
-  width: 100%;
   position: fixed;
   bottom: 0;
 `

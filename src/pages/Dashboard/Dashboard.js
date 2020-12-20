@@ -84,7 +84,7 @@ export default function Dashboard() {
 }
 
 const ContentGrid = styled.div`
-  margin: 20px;
+  padding: 20px;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 22px;
@@ -129,7 +129,6 @@ const ComparisonNumber = styled.div`
   }
 `
 const AppNavigation = styled.div`
-  width: 100%;
   position: fixed;
   bottom: 0;
 `
