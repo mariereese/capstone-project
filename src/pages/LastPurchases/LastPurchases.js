@@ -23,13 +23,16 @@ export default function Overview() {
           <LastPurchasesCard>
             <h2>letzte Einkäufe:</h2>
             <LastPurchasesList>
-              {savedPurchases.map(({ sum, date, purchasedFood }) => (
-                <SavedPurchase
-                  carbonFootprintSum={sum}
-                  purchaseDate={date}
-                  purchasedFood={purchasedFood}
-                />
-              ))}
+              {savedPurchases
+                .filter((value) => JSON.stringify(value) !== '{}')
+                .map(({ sum, date, purchasedFood }, index) => (
+                  <SavedPurchase
+                    carbonFootprintSum={sum}
+                    purchaseDate={date}
+                    purchasedFood={purchasedFood}
+                    key={index}
+                  />
+                ))}
             </LastPurchasesList>
           </LastPurchasesCard>
         </ContentGrid>
@@ -55,6 +58,8 @@ const LastPurchasesCard = styled(Card)`
 const LastPurchasesList = styled.ul`
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column-reverse;
 `
 
 const AppNavigation = styled.div`

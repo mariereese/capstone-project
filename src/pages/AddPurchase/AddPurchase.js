@@ -19,6 +19,7 @@ export default function AddPurchase() {
     loadLocally('purchasedFood') ?? []
   )
   const [foodListModal, setFoodListModal] = useState(false)
+
   const [carbonFootprintSum, setCarbonFootprintSum] = useState(
     loadLocally('carbonFootprintSum') ?? 0
   )
@@ -26,6 +27,7 @@ export default function AddPurchase() {
   const [savedPurchase, setSavedPurchase] = useState(
     loadLocally('savedPurchase') || []
   )
+
   useEffect(() => {
     getFood()
       .then((data) => setFoodList(data))
@@ -107,7 +109,13 @@ export default function AddPurchase() {
   function savePurchase() {
     setSavedPurchase([
       ...savedPurchase,
-      { date: today, purchasedFood: purchasedFood, sum: carbonFootprintSum },
+      carbonFootprintSum !== 0
+        ? {
+            date: today,
+            purchasedFood: purchasedFood,
+            sum: carbonFootprintSum,
+          }
+        : {},
     ])
   }
 

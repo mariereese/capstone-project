@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 
 export default function FoodList({ foodList, onAddFood }) {
   return (
@@ -12,6 +13,11 @@ export default function FoodList({ foodList, onAddFood }) {
       </FoodListStyled>
     </>
   )
+}
+
+FoodList.propTypes = {
+  foodList: PropTypes.array,
+  onAddFood: PropTypes.func,
 }
 
 const FoodListStyled = styled.ul`

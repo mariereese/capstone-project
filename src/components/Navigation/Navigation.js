@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import { ReactComponent as Dashboard } from '../../images/nav-dashboard-icon.svg'
 import { ReactComponent as ShoppingBag } from '../../images/shopping-bag.svg'
 
@@ -15,12 +16,18 @@ export default function Navigation({ icon, savePurchase, isDisabled }) {
           {icon}
         </PlusButton>
       </NavLinkStyled>
-      <NavLinkStyled to="/overview">
+      <NavLinkStyled to="/last-purchases">
         <ShoppingBagIcon />
         <PageName>Einkäufe</PageName>
       </NavLinkStyled>
     </NavBar>
   )
+}
+
+Navigation.propTypes = {
+  icon: PropTypes.element,
+  savePurchase: PropTypes.func,
+  isDisabled: PropTypes.bool,
 }
 
 const NavBar = styled.footer`

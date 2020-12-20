@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 import { ReactComponent as Hide } from '../../images/arrow-right.svg'
 import { ReactComponent as Show } from '../../images/arrow-down.svg'
 
@@ -28,10 +29,10 @@ export default function SavedPurchase({
       </div>
       {showPurchase && (
         <SavedPurchasedFood>
-          {purchasedFood.map(({ food, co2 }) => (
-            <FoodItem>
-              <p className="food-item__name">{food}</p>
-              <p className="food-item__co2">
+          {purchasedFood.map(({ food, co2 }, index) => (
+            <FoodItem key={index}>
+              <p>{food}</p>
+              <p>
                 {co2} kg CO<sub>2</sub>
               </p>
             </FoodItem>
@@ -42,9 +43,16 @@ export default function SavedPurchase({
   )
 }
 
+SavedPurchase.propTypes = {
+  carbonFootprintSum: PropTypes.number,
+  purchaseDate: PropTypes.string,
+  purchasedFood: PropTypes.array,
+  index: PropTypes.number,
+}
+
 const LastPurchaseListItem = styled.li`
   div {
-    margin: 0.75em 1em 0.5em;
+    margin: 0.2em 1em 0.5em;
     display: grid;
     grid-template-columns: 20px 1fr 1fr;
     grid-column-gap: 10px;
@@ -82,10 +90,6 @@ const FoodItem = styled.li`
   margin-bottom: 0.5em;
   display: grid;
   grid-template-columns: 2fr 1fr;
-
-  .food-item__co2 {
-    align-self: center;
-  }
 
   p {
     font-size: 1.1rem;
