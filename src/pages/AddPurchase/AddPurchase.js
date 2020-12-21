@@ -160,10 +160,10 @@ const ContentGrid = styled.div`
   row-gap: 12px;
 `
 const FoodListModal = styled.div`
-  position: absolute;
-  top: 205px;
+  max-width: 360px;
 `
 const AppNavigation = styled.div`
+  width: 100%;
   position: fixed;
   bottom: 0;
 `

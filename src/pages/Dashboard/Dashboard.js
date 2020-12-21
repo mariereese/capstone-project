@@ -129,6 +129,7 @@ const ComparisonNumber = styled.div`
   }
 `
 const AppNavigation = styled.div`
+  width: 100%;
   position: fixed;
   bottom: 0;
 `

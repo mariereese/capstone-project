@@ -22,13 +22,11 @@ FoodList.propTypes = {
 
 const FoodListStyled = styled.ul`
   margin: 0;
-  box-shadow: 0 0 10px var(--light-grey);
+  box-shadow: 0 0 6px var(--light-grey);
   border-radius: 21px;
-  width: 335px;
-  max-height: 387px;
+  max-height: 50vh;
   background: white;
   padding: 0;
-  overflow-y: auto;
   overflow-y: scroll;
 `
 
