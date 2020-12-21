@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+# Foodprint
+
+## Capstone project for web-development bootcamp at neue fische
+
+![mock-up](public/images/app_mock_iphone.jpg)
+
+## Description
+
+### Demo
+
+You can find the demo version of the app here [demo](https://capstone-project.mariereese.vercel.app/)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
