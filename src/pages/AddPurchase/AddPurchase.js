@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import Header from '../../components/Header/Header'
 import PageWrapper from '../../components/PageWrapper'
@@ -13,6 +14,7 @@ import loadLocally from '../../lib/loadLocally'
 import saveLocally from '../../lib/savelocally'
 
 export default function AddPurchase() {
+  const history = useHistory()
   const [foodList, setFoodList] = useState([])
   const [searchInput, setSearchInput] = useState('')
   const [purchasedFood, setPurchasedFood] = useState(
@@ -106,8 +108,8 @@ export default function AddPurchase() {
   const yyyy = today.getFullYear()
   today = dd + '.' + mm + '.' + yyyy
 
-  function savePurchase() {
-    setSavedPurchase([
+  async function savePurchase() {
+    await setSavedPurchase([
       ...savedPurchase,
       carbonFootprintSum !== 0
         ? {
@@ -117,6 +119,7 @@ export default function AddPurchase() {
           }
         : {},
     ])
+    history.push('/last-purchases')
   }
 
   return (
@@ -147,7 +150,10 @@ export default function AddPurchase() {
         </ContentGrid>
       </PageWrapper>
       <AppNavigation>
-        <Navigation savePurchase={savePurchase} icon={<SaveIcon />} />
+        <PlusButton onClick={(history) => savePurchase(history)}>
+          <SaveIcon />
+        </PlusButton>
+        <Navigation />
       </AppNavigation>
     </>
   )
@@ -163,9 +169,27 @@ const FoodListModal = styled.div`
   max-width: 360px;
 `
 const AppNavigation = styled.div`
+  max-width: 400px;
   width: 100%;
   position: fixed;
   bottom: 0;
+`
+const PlusButton = styled.button`
+  width: 72px;
+  height: 72px;
+  box-shadow: 0 0 6px #e9aa7c;
+  border: none;
+  border-radius: 100%;
+  padding: 1em;
+  background: radial-gradient(circle, var(--orange) 51%, #e9aa7c 100%);
+  position: absolute;
+  bottom: 40%;
+  left: calc(50% - 36px);
+
+  :hover {
+    transform: translateY(-15px);
+    transition: transform 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  }
 `
 const SaveIcon = styled(Save)`
   width: 40px;
