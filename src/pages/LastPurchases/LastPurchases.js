@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import Header from '../../components/Header/Header'
 import PageWrapper from '../../components/PageWrapper'
@@ -9,7 +10,8 @@ import { ReactComponent as Plus } from '../../images/plus-icon.svg'
 
 import loadLocally from '../../lib/loadLocally'
 
-export default function Overview() {
+export default function LastPurchases() {
+  const history = useHistory()
   const [savedPurchases, setSavedPurchases] = useState([])
   useEffect(() => {
     setSavedPurchases(loadLocally('savedPurchase') ?? [])
@@ -38,14 +40,17 @@ export default function Overview() {
         </ContentGrid>
       </PageWrapper>
       <AppNavigation>
-        <Navigation isDisabled icon={<PlusIcon />} />
+        <PlusButton onClick={() => history.push('/add-purchase')}>
+          <PlusIcon />
+        </PlusButton>
+        <Navigation />
       </AppNavigation>
     </>
   )
 }
 
 const ContentGrid = styled.div`
-  margin: 20px;
+  padding: 20px;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 12px;
@@ -63,9 +68,27 @@ const LastPurchasesList = styled.ul`
 `
 
 const AppNavigation = styled.div`
+  max-width: 400px;
   width: 100%;
   position: fixed;
   bottom: 0;
+`
+const PlusButton = styled.button`
+  width: 72px;
+  height: 72px;
+  box-shadow: 0 0 6px #e9aa7c;
+  border: none;
+  border-radius: 100%;
+  padding: 1em;
+  background: radial-gradient(circle, var(--orange) 51%, #e9aa7c 100%);
+  position: absolute;
+  bottom: 40%;
+  left: calc(50% - 36px);
+
+  :hover {
+    transform: translateY(-15px);
+    transition: transform 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  }
 `
 
 const PlusIcon = styled(Plus)`

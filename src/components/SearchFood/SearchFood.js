@@ -24,6 +24,7 @@ SearchFood.propTypes = {
 
 const SearchBar = styled(Card)`
   display: flex;
+  align-items: center;
 `
 
 const SearchInput = styled.input`
@@ -38,6 +39,6 @@ const SearchInput = styled.input`
 const SearchIcon = styled(Search)`
   margin: 0 2px 0 10px;
   width: 24px;
-  height: auto;
+  height: 24px;
   color: var(--orange);
 `
